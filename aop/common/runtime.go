@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	ProxyMethodPrefix = "github.com/alibaba/ioc-golang/aop."
+	ProxyMethodPrefix = "github.com/cc-cheunggg/ioc-golang/aop."
 )
 
 func CurrentCallingMethodName(skip int) string {

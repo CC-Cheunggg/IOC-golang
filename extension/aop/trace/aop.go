@@ -18,16 +18,16 @@ package trace
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/config"
-	tracePB "github.com/alibaba/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
-	"github.com/alibaba/ioc-golang/extension/aop/trace/log"
-	_ "github.com/alibaba/ioc-golang/extension/aop/trace/log/extension"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	tracePB "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log"
+	_ "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log/extension"
 )
 
 const Name = "trace"

@@ -22,8 +22,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/mocks"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/mocks"
 )
 
 const (

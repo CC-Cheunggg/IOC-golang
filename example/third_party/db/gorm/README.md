@@ -10,22 +10,22 @@ ioc-golang 框架提供了注入数据库连接的能力，开发者可以在配
 
 ### 注入模型与结构
 
-[多例（normal）依赖注入模型](https://github.com/alibaba/IOC-golang/tree/master/extension/normal)
+[多例（normal）依赖注入模型](https://github.com/cc-cheunggg/ioc-golang/tree/master/extension/normal)
 
-[预定义的 mysql 结构](https://github.com/alibaba/IOC-golang/tree/master/extension/normal/mysql)
+[预定义的 mysql 结构](https://github.com/cc-cheunggg/ioc-golang/tree/master/extension/normal/mysql)
 
 ### 关键代码
 
 ```go
 import(
-	normalMysql "github.com/alibaba/ioc-golang/extension/db/gorm"
+	normalMysql "github.com/cc-cheunggg/ioc-golang/extension/db/gorm"
 )
 
 // +ioc:autowire=true
 // +ioc:autowire:type=singleton
 
 type App struct {
-	MyDataTable normalMysql.Mysql `normal:"github.com/alibaba/ioc-golang/extension/normal.Impl,my-mysql,mydata"`
+	MyDataTable normalMysql.Mysql `normal:"github.com/cc-cheunggg/ioc-golang/extension/normal.Impl,my-mysql,mydata"`
 }
 ```
 
@@ -35,14 +35,14 @@ type App struct {
 
 - 标签
 
-  开发人员可以为 normalMysql.Mysql 类型的字段增加 `normal:"github.com/alibaba/ioc-golang/extension/db/gorm.GORMDB,$(configKey),$(tableName)" `标签。从而注入指定数据库的指定表 sdk。
+  开发人员可以为 normalMysql.Mysql 类型的字段增加 `normal:"github.com/cc-cheunggg/ioc-golang/extension/db/gorm.GORMDB,$(configKey),$(tableName)" `标签。从而注入指定数据库的指定表 sdk。
 
-  例子中的 `normal:"github.com/alibaba/ioc-golang/extension/db/gorm.GORMDB,my-mysql,mydata"` 的意义为，将配置文件内`autowire.normal.<github.com/alibaba/ioc-golang/extension/db/gorm.GORMDB>.my-mysql.param`定义的值作为参数。
+  例子中的 `normal:"github.com/cc-cheunggg/ioc-golang/extension/db/gorm.GORMDB,my-mysql,mydata"` 的意义为，将配置文件内`autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/db/gorm.GORMDB>.my-mysql.param`定义的值作为参数。
 
 ```yaml
 autowire:
   normal:
-    github.com/alibaba/ioc-golang/extension/db/gorm.GORMDB:
+    github.com/cc-cheunggg/ioc-golang/extension/db/gorm.GORMDB:
       my-mysql:
         param:
           host: "127.0.0.1"

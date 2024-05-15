@@ -24,11 +24,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/proxy"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/proxy"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
 	"dubbo.apache.org/dubbo-go/v3/protocol/invocation"
 	"github.com/gin-gonic/gin"
@@ -36,7 +36,7 @@ import (
 	"dubbo.apache.org/dubbo-go/v3/common/constant"
 	dubboProtocol "dubbo.apache.org/dubbo-go/v3/protocol"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol"
 )
 
 // +ioc:autowire=true

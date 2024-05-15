@@ -18,8 +18,8 @@ package watch
 import (
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop"
-	watchPB "github.com/alibaba/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	watchPB "github.com/cc-cheunggg/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
 )
 
 const Name = "watch"

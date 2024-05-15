@@ -21,7 +21,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/api"
+	"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/api"
 )
 
 type HelloServiceImpl struct {

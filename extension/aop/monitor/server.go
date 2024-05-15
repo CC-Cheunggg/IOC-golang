@@ -18,9 +18,9 @@ package monitor
 import (
 	"time"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	monitorPB "github.com/alibaba/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
+	monitorPB "github.com/cc-cheunggg/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
 )
 
 // +ioc:autowire=true

@@ -21,12 +21,12 @@ import (
 	"io/ioutil"
 	"plugin"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
-	"github.com/alibaba/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
 )
 
 // +ioc:autowire=true

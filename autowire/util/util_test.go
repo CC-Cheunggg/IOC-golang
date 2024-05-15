@@ -42,7 +42,7 @@ func TestGetIdByInterfaceAndImplPtr(t *testing.T) {
 			args: args{
 				implStructPtr: &StructFoo{},
 			},
-			want: "github.com/alibaba/ioc-golang/autowire/util.StructFoo",
+			want: "github.com/cc-cheunggg/ioc-golang/autowire/util.StructFoo",
 		},
 	}
 	for _, tt := range tests {

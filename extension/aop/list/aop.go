@@ -18,10 +18,10 @@ package list
 import (
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
 )
 
 func init() {

@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/config"
 )
 
 func (a *App) TestRun(t *testing.T) {

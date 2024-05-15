@@ -21,7 +21,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 )
 
 // +ioc:autowire=true

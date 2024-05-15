@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/aop/dynamic_plugin/complex/service2"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/dynamic_plugin/complex/service2"
 )
 
 // +ioc:autowire=true

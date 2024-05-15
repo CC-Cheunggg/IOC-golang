@@ -6,10 +6,10 @@
 package service
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	util "github.com/alibaba/ioc-golang/autowire/util"
-	rpc_service "github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_service"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
+	rpc_service "github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_service"
 )
 
 func init() {
@@ -19,7 +19,7 @@ func init() {
 		},
 	})
 	bankServiceStructDescriptor := &autowire.StructDescriptor{
-		Alias: "github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service/api.BankServiceIOCRPCClient",
+		Alias: "github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service/api.BankServiceIOCRPCClient",
 		Factory: func() interface{} {
 			return &BankService{}
 		},

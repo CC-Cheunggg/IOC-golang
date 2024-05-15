@@ -19,7 +19,7 @@ import "fmt"
 
 // +ioc:autowire=true
 // +ioc:autowire:type=singleton
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/example/autowire/autowire_active_profile_implements/service.Service
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_active_profile_implements/service.Service
 
 type serviceDefaultImpl struct {
 }

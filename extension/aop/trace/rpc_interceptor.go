@@ -25,7 +25,7 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/petermattis/goid"
 
-	"github.com/alibaba/ioc-golang/extension/aop/trace/goroutine_trace"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/goroutine_trace"
 )
 
 // +ioc:autowire=true

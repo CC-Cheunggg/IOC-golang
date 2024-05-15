@@ -21,14 +21,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alibaba/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
 
-	"github.com/alibaba/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 func TestWatchInterceptor(t *testing.T) {

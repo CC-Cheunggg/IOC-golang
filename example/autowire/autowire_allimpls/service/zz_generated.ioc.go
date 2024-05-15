@@ -6,9 +6,9 @@
 package service
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	allimpls "github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	allimpls "github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 )
 
 func init() {

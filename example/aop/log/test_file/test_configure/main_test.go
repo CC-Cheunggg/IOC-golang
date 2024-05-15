@@ -21,11 +21,11 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/config"
-	"github.com/alibaba/ioc-golang/example/aop/log/app"
-	aopLog "github.com/alibaba/ioc-golang/extension/aop/log"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/log/app"
+	aopLog "github.com/cc-cheunggg/ioc-golang/extension/aop/log"
 )
 
 func TestLogAOPLevelConfiguration(t *testing.T) {

@@ -18,12 +18,12 @@ package main
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/test/docker_compose"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/test/docker_compose"
 )
 
 func (a *App) TestRun(t *testing.T) {
@@ -38,8 +38,8 @@ func (a *App) TestRun(t *testing.T) {
 func TestRedisClient(t *testing.T) {
 	assert.Nil(t, docker_compose.DockerComposeUp("./docker-compose/docker-compose.yaml", 0))
 	if err := ioc.Load(
-		config.AddProperty("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db1-redis.param.address", "localhost:6379"),
-		config.AddProperty("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db1-redis.param.db", 1)); err != nil {
+		config.AddProperty("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db1-redis.param.address", "localhost:6379"),
+		config.AddProperty("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db1-redis.param.db", 1)); err != nil {
 		panic(err)
 	}
 	app, err := GetAppSingleton()

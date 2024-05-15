@@ -16,10 +16,10 @@
 package rpc_service
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol/protocol_impl"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/proxy"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol/protocol_impl"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/proxy"
 )
 
 func init() {

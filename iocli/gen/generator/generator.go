@@ -18,10 +18,10 @@ package generator
 import (
 	"go/ast"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/marker"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/marker"
 
 	"sigs.k8s.io/controller-tools/pkg/genall"
 	"sigs.k8s.io/controller-tools/pkg/loader"

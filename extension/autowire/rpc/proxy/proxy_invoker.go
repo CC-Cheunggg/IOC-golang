@@ -20,7 +20,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 
 	"dubbo.apache.org/dubbo-go/v3/common"
 	"dubbo.apache.org/dubbo-go/v3/common/constant"

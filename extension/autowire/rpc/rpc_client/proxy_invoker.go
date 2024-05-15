@@ -21,7 +21,7 @@ import (
 	"dubbo.apache.org/dubbo-go/v3/common"
 	dubboProtocol "dubbo.apache.org/dubbo-go/v3/protocol"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol"
 )
 
 type proxyInvoker struct {

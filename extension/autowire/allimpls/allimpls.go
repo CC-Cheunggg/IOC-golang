@@ -19,12 +19,12 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/alibaba/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 func init() {

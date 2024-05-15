@@ -16,8 +16,8 @@
 package main
 
 import (
-	"github.com/alibaba/ioc-golang/example/aop/dynamic_plugin/complex/service1"
-	normalRedis "github.com/alibaba/ioc-golang/extension/state/redis"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/dynamic_plugin/complex/service1"
+	normalRedis "github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 // +ioc:autowire=true

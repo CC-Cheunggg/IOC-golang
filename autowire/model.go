@@ -18,7 +18,7 @@ package autowire
 import (
 	"reflect"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 // Autowire

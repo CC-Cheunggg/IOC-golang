@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_allimpls/service"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_allimpls/service"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 )
 
 func (a *App) TestRun(t *testing.T) {

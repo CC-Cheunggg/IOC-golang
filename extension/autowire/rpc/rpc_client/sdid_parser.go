@@ -18,8 +18,8 @@ package rpc_client
 import (
 	"strings"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 type sdidParser struct {

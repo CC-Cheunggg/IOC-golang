@@ -22,8 +22,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/test/iocli_command"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/test/iocli_command"
 )
 
 func TestPrintVersion(t *testing.T) {

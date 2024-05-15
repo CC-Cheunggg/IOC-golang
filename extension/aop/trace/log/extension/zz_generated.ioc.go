@@ -6,10 +6,10 @@
 package extension
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/extension/aop/trace/log"
-	allimpls "github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log"
+	allimpls "github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 	"github.com/inconshreveable/log15"
 )
 

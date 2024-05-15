@@ -20,7 +20,7 @@ import "sigs.k8s.io/controller-tools/pkg/markers"
 // +ioc:autowire=true
 // +ioc:autowire:type=allimpls
 // +ioc:autowire:proxy=false
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/iocli/gen/marker.DefinitionGetter
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/iocli/gen/marker.DefinitionGetter
 
 type iocGolangAutowireAllImplsTypeMarker struct {
 }

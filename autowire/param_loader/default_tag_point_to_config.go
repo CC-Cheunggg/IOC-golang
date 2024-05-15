@@ -21,9 +21,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/config"
 )
 
 type defaultTagPointToConfig struct {
@@ -49,43 +49,47 @@ func GetDefaultTagPointToConfigParamLoader() autowire.ParamLoader {
 /*
 Load support load struct described like:
 ```go
-normal.RegisterStructDescriptor(&autowire.StructDescriptor{
-		Factory:   func() interface{}{
-			return &Impl{}
-		},
-		ParamFactory: func() interface{}{
-			return &Config{}
-		},
-		ConstructFunc: func(i interface{}, p interface{}) (interface{}, error) {
-			return i, nil
-		},
-	})
-}
 
-type Config struct {
-	Address  string
-	Password string
-	DB       string
-}
+	normal.RegisterStructDescriptor(&autowire.StructDescriptor{
+			Factory:   func() interface{}{
+				return &Impl{}
+			},
+			ParamFactory: func() interface{}{
+				return &Config{}
+			},
+			ConstructFunc: func(i interface{}, p interface{}) (interface{}, error) {
+				return i, nil
+			},
+		})
+	}
+
+	type Config struct {
+		Address  string
+		Password string
+		DB       string
+	}
 
 ```
 with
 Autowire type 'normal'
 StructName 'Impl'
 Field:
+
 	MyRedis Redis `normal:"Impl, redis-1"`
 
 from:
 
 ```yaml
 extension:
-  normal:
-      github.com/alibaba/ioc-golang/test.Impl:
-        redis-1:
-          param:
-            address: 127.0.0.1
-            password: xxx
-            db: 0
+
+	normal:
+	    github.com/cc-cheunggg/ioc-golang/test.Impl:
+	      redis-1:
+	        param:
+	          address: 127.0.0.1
+	          password: xxx
+	          db: 0
+
 ```
 */
 func (p *defaultTagPointToConfig) Load(sd *autowire.StructDescriptor, fi *autowire.FieldInfo) (interface{}, error) {

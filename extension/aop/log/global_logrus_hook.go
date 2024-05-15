@@ -23,7 +23,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/alibaba/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop"
 )
 
 const GlobalLogrusIOCCtxHookType = "GlobalLogrusIOCCtxHook"
@@ -115,11 +115,12 @@ func (l *GlobalLogrusIOCCtxHook) Fire(entry *logrus.Entry) error {
 }
 
 /*
-	SetLogLevel is used to dynamic change log level using 'iocli call' command
+		SetLogLevel is used to dynamic change log level using 'iocli call' command
 
- 	iocli call singleton github.com/alibaba/ioc-golang/extension/aop/log.GlobalLogrusIOCCtxHook SetLogLevel --params "[2]"
+	 	iocli call singleton github.com/cc-cheunggg/ioc-golang/extension/aop/log.GlobalLogrusIOCCtxHook SetLogLevel --params "[2]"
 
 params:
+
 	PanicLevel: 0
 	FatalLevel: 1
 	ErrorLevel: 2

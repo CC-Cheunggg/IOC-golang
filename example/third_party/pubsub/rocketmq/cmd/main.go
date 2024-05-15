@@ -22,9 +22,9 @@ import (
 	"github.com/apache/rocketmq-client-go/v2/admin"
 	"github.com/apache/rocketmq-client-go/v2/primitive"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/config"
-	"github.com/alibaba/ioc-golang/extension/pubsub/rocketmq"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/extension/pubsub/rocketmq"
 )
 
 // +ioc:autowire=true

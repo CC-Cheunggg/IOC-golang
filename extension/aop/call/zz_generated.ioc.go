@@ -6,9 +6,9 @@
 package call
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
-	singleton "github.com/alibaba/ioc-golang/autowire/singleton"
-	util "github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	singleton "github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 func init() {

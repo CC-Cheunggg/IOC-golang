@@ -23,8 +23,8 @@ import (
 	"github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v3"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/config"
 )
 
 type paramLoader struct {
@@ -40,8 +40,10 @@ from:
 
 ```yaml
 myConfig:
-  myConfigSubPath:
-      myConfigKey: myConfigValue
+
+	myConfigSubPath:
+	    myConfigKey: myConfigValue
+
 ```
 */
 func (p *paramLoader) Load(sd *autowire.StructDescriptor, fi *autowire.FieldInfo) (interface{}, error) {

@@ -20,7 +20,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	traceLog "github.com/alibaba/ioc-golang/extension/aop/trace/log"
+	traceLog "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log"
 )
 
 const logrusName = "logrus"
@@ -29,7 +29,7 @@ const logrusName = "logrus"
 // +ioc:autowire:type=allimpls
 // +ioc:autowire:constructFunc=newLogrusWriter
 // +ioc:autowire:proxy:autoInjection=false
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/extension/aop/trace/log.TraceExtensionWriter
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log.TraceExtensionWriter
 
 type logrusWriter struct {
 	originWriter      io.Writer

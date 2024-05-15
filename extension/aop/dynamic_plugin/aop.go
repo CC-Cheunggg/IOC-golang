@@ -18,8 +18,8 @@ package dynamic_plugin
 import (
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
 )
 
 const Name = "dynamic_plugin"

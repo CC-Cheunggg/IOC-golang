@@ -16,8 +16,8 @@
 package transaction
 
 import (
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 func parseRollbackMethodNameFromSDMetadata(metadata autowire.Metadata, methodName string) (string, bool) {

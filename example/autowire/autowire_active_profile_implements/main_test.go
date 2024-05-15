@@ -18,11 +18,11 @@ package main
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 )
 
 func (a *App) TestRun(t *testing.T, assertProfile string) {

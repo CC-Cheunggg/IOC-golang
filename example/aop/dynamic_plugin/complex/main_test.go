@@ -23,14 +23,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alibaba/ioc-golang/test/docker_compose"
+	"github.com/cc-cheunggg/ioc-golang/test/docker_compose"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/example/aop/dynamic_plugin/complex/service2"
-	"github.com/alibaba/ioc-golang/test/iocli_command"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/dynamic_plugin/complex/service2"
+	"github.com/cc-cheunggg/ioc-golang/test/iocli_command"
 )
 
 func (a *App) TestWithPlugin(t *testing.T) {

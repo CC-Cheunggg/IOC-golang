@@ -18,7 +18,7 @@ package cli
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/alibaba/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
 )
 
 var pluginCommand = &cobra.Command{

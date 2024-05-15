@@ -18,8 +18,8 @@ package call
 import (
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
 )
 
 const Name = "call"

@@ -6,9 +6,9 @@
 package dynamic_plugin
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
-	util "github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 func init() {

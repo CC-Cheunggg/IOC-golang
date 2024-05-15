@@ -16,9 +16,9 @@
 package trace
 
 import (
-	traceCommon "github.com/alibaba/ioc-golang/extension/aop/trace/common"
+	traceCommon "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/common"
 
-	"github.com/alibaba/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
 )
 
 // +ioc:autowire=true

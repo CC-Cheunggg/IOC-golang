@@ -19,15 +19,15 @@ import (
 	"sigs.k8s.io/controller-tools/pkg/loader"
 	"sigs.k8s.io/controller-tools/pkg/markers"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin"
 )
 
 const allimplsAutowireTypeAnnotation = "ioc:autowire:allimpls:autowireType"
 
 // +ioc:autowire=true
 // +ioc:autowire:type=allimpls
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/iocli/gen/generator/plugin.CodeGeneratorPluginForOneStruct
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin.CodeGeneratorPluginForOneStruct
 // +ioc:autowire:allimpls:autowireType=normal
 // +ioc:autowire:constructFunc=create
 

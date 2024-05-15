@@ -18,11 +18,11 @@ package main
 import (
 	"log"
 
-	_ "github.com/alibaba/ioc-golang/extension/imports/cli"
-	_ "github.com/alibaba/ioc-golang/iocli/gen"
-	_ "github.com/alibaba/ioc-golang/iocli/init"
+	_ "github.com/cc-cheunggg/ioc-golang/extension/imports/cli"
+	_ "github.com/cc-cheunggg/ioc-golang/iocli/gen"
+	_ "github.com/cc-cheunggg/ioc-golang/iocli/init"
 
-	"github.com/alibaba/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
 )
 
 func main() {

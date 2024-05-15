@@ -1,7 +1,7 @@
 package dal
 
 import (
-	"github.com/alibaba/ioc-golang/extension/db/gorm"
+	"github.com/cc-cheunggg/ioc-golang/extension/db/gorm"
 )
 
 //type GORMConn[T interface{}] struct {

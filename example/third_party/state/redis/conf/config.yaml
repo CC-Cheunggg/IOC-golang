@@ -1,6 +1,6 @@
 autowire:
   normal:
-    github.com/alibaba/ioc-golang/extension/state/redis.Redis:
+    github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis:
       db1-redis:
         param:
           address: localhost:6379
@@ -16,5 +16,5 @@ autowire:
         address: ${REDIS_ADDRESS_EXPAND}
         db: 15
       nested:
-        address: ${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand.address}
-        db: ${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand.db}
+        address: ${autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.expand.address}
+        db: ${autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.expand.db}

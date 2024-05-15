@@ -18,10 +18,10 @@ package aop
 import (
 	"sync"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/config"
 )
 
 const (

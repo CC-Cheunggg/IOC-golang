@@ -18,11 +18,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 
-	normalRedis "github.com/alibaba/ioc-golang/extension/state/redis"
+	normalRedis "github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 // +ioc:autowire=true
@@ -49,7 +49,7 @@ Using API to config the following config properties
 ```yaml
 autowire:
   normal:
-    github.com/alibaba/ioc-golang/extension/state/redis.Redis:
+    github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis:
       db1-redis:
         param:
           address: localhost:6379
@@ -59,8 +59,8 @@ autowire:
 
 func main() {
 	if err := ioc.Load(
-		config.AddProperty("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db1-redis.param.address", "localhost:6379"),
-		config.AddProperty("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db1-redis.param.db", 1)); err != nil {
+		config.AddProperty("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db1-redis.param.address", "localhost:6379"),
+		config.AddProperty("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db1-redis.param.db", 1)); err != nil {
 		panic(err)
 	}
 	app, err := GetAppSingleton()

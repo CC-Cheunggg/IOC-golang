@@ -22,11 +22,11 @@ import (
 
 	"dubbo.apache.org/dubbo-go/v3/protocol/invocation"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol/protocol_impl"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/proxy"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol/protocol_impl"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/proxy"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 const proxyProtocol = "aop" + Name

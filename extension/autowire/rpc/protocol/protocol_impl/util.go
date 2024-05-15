@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 // ParseArgs @data should be []interface{}'s marshal result, @argsType should be each object's reflect type

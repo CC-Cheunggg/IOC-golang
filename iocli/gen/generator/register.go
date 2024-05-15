@@ -25,10 +25,10 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin"
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin/common"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin/common"
 
 	"sigs.k8s.io/controller-tools/pkg/genall"
 	"sigs.k8s.io/controller-tools/pkg/loader"
@@ -197,7 +197,7 @@ func (c *copyMethodMaker) generateMethodsFor(ctx *genall.GenerationContext, root
 	getMethodGenerateCtxs := make([]getMethodGenerateCtx, 0)
 	constructFunctionInfoNames := make([]string, 0)
 	c.Line(`func init() {`)
-	autowireAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire")
+	autowireAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire")
 	for _, info := range infos {
 		if c.debugMode {
 			fmt.Printf("[Scan Struct] %s.%s\n", root.PkgPath, info.Name)
@@ -270,20 +270,20 @@ func (c *copyMethodMaker) generateMethodsFor(ctx *genall.GenerationContext, root
 			if autowireType == "normal" || autowireType == "singleton" {
 				autowireTypesAliasPairs = append(autowireTypesAliasPairs,
 					autowireTypeAliasPair{
-						autowireTypeAlias: c.NeedImport(fmt.Sprintf("github.com/alibaba/ioc-golang/autowire/%s", autowireType)),
+						autowireTypeAlias: c.NeedImport(fmt.Sprintf("github.com/cc-cheunggg/ioc-golang/autowire/%s", autowireType)),
 						autowireType:      autowireType,
 					})
 			} else if autowireType == "rpc" {
 				autowireTypesAliasPairs = append(autowireTypesAliasPairs,
 					autowireTypeAliasPair{
-						autowireTypeAlias: c.NeedImport("github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_service"),
+						autowireTypeAlias: c.NeedImport("github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_service"),
 						autowireType:      autowireType,
 					})
 				rpcServiceStructInfos = append(rpcServiceStructInfos, info)
 			} else {
 				autowireTypesAliasPairs = append(autowireTypesAliasPairs,
 					autowireTypeAliasPair{
-						autowireTypeAlias: c.NeedImport(fmt.Sprintf("github.com/alibaba/ioc-golang/extension/autowire/%s", autowireType)),
+						autowireTypeAlias: c.NeedImport(fmt.Sprintf("github.com/cc-cheunggg/ioc-golang/extension/autowire/%s", autowireType)),
 						autowireType:      autowireType,
 					})
 			}
@@ -292,7 +292,7 @@ func (c *copyMethodMaker) generateMethodsFor(ctx *genall.GenerationContext, root
 		// gen proxy registry
 		if proxyEnable {
 			needProxyStructInfos = append(needProxyStructInfos, info)
-			normalAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire/normal")
+			normalAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire/normal")
 			c.Linef(`%s.RegisterStructDescriptor(&%s.StructDescriptor{`, normalAlias, autowireAlias)
 			c.Linef(`Factory: func() interface{} {
 			return &%s_{}
@@ -463,7 +463,7 @@ func (c *copyMethodMaker) generateMethodsFor(ctx *genall.GenerationContext, root
 			}
 
 			if g.paramTypeName != "" && autowireAliasPair.autowireType != "rpc" {
-				utilAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire/util")
+				utilAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire/util")
 				c.Linef(`func Get%s%s(p *%s)(*%s, error){
 			if %s == ""{
 				%s = %s.GetSDIDByStructPtr(new(%s))
@@ -503,7 +503,7 @@ func (t *This%s) This() %sIOCInterface {
 				}
 				c.Line("")
 			} else {
-				utilAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire/util")
+				utilAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire/util")
 				c.Linef(`func Get%s%s()(*%s, error){`, g.structName, getterSuffix, g.structName)
 				c.Linef(`if %s == ""{
 					%s = %s.GetSDIDByStructPtr(new(%s))

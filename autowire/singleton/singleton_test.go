@@ -20,13 +20,13 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 type mockImpl struct {
 }
 
-const mockImplFullName = "github.com/alibaba/ioc-golang/autowire/singleton.mockImpl"
+const mockImplFullName = "github.com/cc-cheunggg/ioc-golang/autowire/singleton.mockImpl"
 
 func TestAutowire_RegisterAndGetAllStructDescriptors(t *testing.T) {
 	t.Run("test singleton autowire register and get all struct descriptors", func(t *testing.T) {

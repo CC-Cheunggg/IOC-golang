@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 )
 
 func (a *App) TestRun(t *testing.T) {

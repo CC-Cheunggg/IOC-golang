@@ -25,8 +25,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/test/iocli_command"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/test/iocli_command"
 )
 
 type mockWriter struct {
@@ -45,10 +45,10 @@ func TestAOPConcurrent(t *testing.T) {
 		output, err := iocli_command.Run([]string{"monitor"}, time.Second*6)
 		assert.Nil(t, err)
 		t.Log(output)
-		assert.True(t, strings.Contains(output, `github.com/alibaba/ioc-golang/test/stress/aop.NormalApp.RunTest()
+		assert.True(t, strings.Contains(output, `github.com/cc-cheunggg/ioc-golang/test/stress/aop.NormalApp.RunTest()
 Total: 10000, Success: 10000, Fail: 0, AvgRT: `))
 		assert.True(t, strings.Contains(output, `us, FailRate: 0.00%
-github.com/alibaba/ioc-golang/test/stress/aop.ServiceImpl1.GetHelloString()
+github.com/cc-cheunggg/ioc-golang/test/stress/aop.ServiceImpl1.GetHelloString()
 Total: 10000, Success: 10000, Fail: 0, AvgRT: `))
 		close(closeCh)
 	}()
@@ -77,10 +77,10 @@ func TestAOPRecursive(t *testing.T) {
 		output, err := iocli_command.Run([]string{"monitor"}, time.Second*6)
 		assert.Nil(t, err)
 		t.Log(output)
-		assert.True(t, strings.Contains(output, `github.com/alibaba/ioc-golang/test/stress/aop.RecursiveApp.RunTest()
+		assert.True(t, strings.Contains(output, `github.com/cc-cheunggg/ioc-golang/test/stress/aop.RecursiveApp.RunTest()
 Total: 901, Success: 901, Fail: 0, AvgRT: `))
 		assert.True(t, strings.Contains(output, `us, FailRate: 0.00%
-github.com/alibaba/ioc-golang/test/stress/aop.ServiceImpl1.GetHelloString()
+github.com/cc-cheunggg/ioc-golang/test/stress/aop.ServiceImpl1.GetHelloString()
 Total: 2, Success: 2, Fail: 0, AvgRT: `))
 		close(closeCh)
 	}()
@@ -95,7 +95,7 @@ Total: 2, Success: 2, Fail: 0, AvgRT: `))
 	go func() {
 		output, err := iocli_command.Run([]string{"trace"}, time.Second*6)
 		assert.Nil(t, err)
-		assert.Equal(t, 901, strings.Count(output, ", OperationName: github.com/alibaba/ioc-golang/test/stress/aop.(*recursiveApp_).RunTest, StartTime: "))
+		assert.Equal(t, 901, strings.Count(output, ", OperationName: github.com/cc-cheunggg/ioc-golang/test/stress/aop.(*recursiveApp_).RunTest, StartTime: "))
 		close(closeCh)
 	}()
 	time.Sleep(time.Second * 1)

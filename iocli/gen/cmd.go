@@ -18,19 +18,19 @@ package gen
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
 	"github.com/spf13/cobra"
 	"sigs.k8s.io/controller-tools/pkg/genall"
 	"sigs.k8s.io/controller-tools/pkg/markers"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/generator"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/config"
-	_ "github.com/alibaba/ioc-golang/iocli/gen/marker/impls"
-	"github.com/alibaba/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	_ "github.com/cc-cheunggg/ioc-golang/iocli/gen/marker/impls"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
 )
 
 var (

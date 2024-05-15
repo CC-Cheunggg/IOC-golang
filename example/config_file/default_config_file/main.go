@@ -18,8 +18,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang"
-	configField "github.com/alibaba/ioc-golang/extension/config"
+	"github.com/cc-cheunggg/ioc-golang"
+	configField "github.com/cc-cheunggg/ioc-golang/extension/config"
 )
 
 // +ioc:autowire=true

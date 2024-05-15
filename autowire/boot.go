@@ -18,7 +18,7 @@ package autowire
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 func printAutowireRegisteredStructDescriptor() {

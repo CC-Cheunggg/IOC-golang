@@ -6,12 +6,12 @@
 package monitor
 
 import (
-	"github.com/alibaba/ioc-golang/aop"
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	singleton "github.com/alibaba/ioc-golang/autowire/singleton"
-	util "github.com/alibaba/ioc-golang/autowire/util"
-	aopmonitor "github.com/alibaba/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	singleton "github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
+	aopmonitor "github.com/cc-cheunggg/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
 )
 
 func init() {

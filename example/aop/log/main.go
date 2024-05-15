@@ -16,8 +16,8 @@
 package main
 
 import (
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/aop/log/app"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/log/app"
 )
 
 func main() {

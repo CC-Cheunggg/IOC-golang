@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
 )
 
 func TestMetadataSorter(t *testing.T) {

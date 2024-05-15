@@ -16,8 +16,8 @@
 package rpc_client
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/param_loader"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/param_loader"
 )
 
 var defaultParamLoaderSingleton autowire.ParamLoader

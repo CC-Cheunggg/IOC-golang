@@ -14,7 +14,7 @@
 
 ## Program Debug Feature
 
-IOC golang framework has the ability to debug go programs based on the struct AOP layer, help with troubleshooting, performance analysis, and improve the observability of applications. In [README](https://github.com/alibaba/ioc-golang#quick-start) QuickStart page shows the ability to view interface information and monitor parameters. In [IOC golang based e-commerce system demo]( https://github.com/ioc-golang/shopping-system ). It shows the IOC-golang based, non intrusive, method granularity whole invoking link tracking capability.
+IOC golang framework has the ability to debug go programs based on the struct AOP layer, help with troubleshooting, performance analysis, and improve the observability of applications. In [README](https://github.com/cc-cheunggg/ioc-golang#quick-start) QuickStart page shows the ability to view interface information and monitor parameters. In [IOC golang based e-commerce system demo]( https://github.com/ioc-golang/shopping-system ). It shows the IOC-golang based, non intrusive, method granularity whole invoking link tracking capability.
 
 ## Annotation and Code generation
 
@@ -62,15 +62,15 @@ iocli can identify the following annotation keys, and the values after '=' are j
 
   - config:
 
-     [example/autowire/autowire_config](https://github.com/alibaba/IOC-golang/tree/master/example/autowire/autowire_config)
+     [example/autowire/autowire_config](https://github.com/cc-cheunggg/ioc-golang/tree/master/example/autowire/autowire_config)
 
   - grpc:
 
-    The configuration model is a encapsulation extension based on the multi instance model. The structure defined based on the configuration model is convenient to inject information from the yaml configuration file. Reference to [example/third_party/autowire/grpc](https://github.com/alibaba/IOC-golang/tree/master/example/third_party/autowire/grpc)
+    The configuration model is a encapsulation extension based on the multi instance model. The structure defined based on the configuration model is convenient to inject information from the yaml configuration file. Reference to [example/third_party/autowire/grpc](https://github.com/cc-cheunggg/ioc-golang/tree/master/example/third_party/autowire/grpc)
 
   - rpc:
 
-    RPC model will generate RPC server registration code and RPC client API stub in the code generation phase. Reference to  [example/autowire/autowire_rpc](https://github.com/alibaba/IOC-golang/tree/master/example/autowire/autowire_rpc)
+    RPC model will generate RPC server registration code and RPC client API stub in the code generation phase. Reference to  [example/autowire/autowire_rpc](https://github.com/cc-cheunggg/ioc-golang/tree/master/example/autowire/autowire_rpc)
 
   
 
@@ -80,7 +80,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
 
   
 
-  The parameter loader is optionally customized by the structure definer. Refer to [ioc-go-extension/state/redis](http://github.com/alibaba/ioc-golang/extension/blob/state/redis)
+  The parameter loader is optionally customized by the structure definer. Refer to [ioc-go-extension/state/redis](http://github.com/cc-cheunggg/ioc-golang/extension/blob/state/redis)
 
   param loader should import Load method：
   
@@ -146,7 +146,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
   
   ```go
   type App struct {
-  	NormalDB3Redis normalRedis.Redis `normal:"github.com/alibaba/ioc-golang/extension/state/redis.Redis,address=127.0.0.1:6379&db=3"`
+  	NormalDB3Redis normalRedis.Redis `normal:"github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis,address=127.0.0.1:6379&db=3"`
   }
   ```
 
@@ -154,7 +154,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
   
   ```go
   type App struct {
-  	NormalDB3Redis normalRedis.Redis `normal:"github.com/alibaba/ioc-golang/extension/state/redis.Redis,db1-redis"`
+  	NormalDB3Redis normalRedis.Redis `normal:"github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis,db1-redis"`
   }
   ```
 
@@ -163,7 +163,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
   ```yaml
   autowire:
     normal:
-      github.com/alibaba/ioc-golang/extension/state/redis.Redis:
+      github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis:
         db1-redis:
           param:
             address: localhost:6379
@@ -174,9 +174,9 @@ iocli can identify the following annotation keys, and the values after '=' are j
   
   **我们提供了预置的参数加载器**
   
-  除非用户有强烈需求，我们更推荐用户直接使用我们预置的参数加载器：http://github.com/alibaba/ioc-golang/tree/master/autowire/param_loader。
+  除非用户有强烈需求，我们更推荐用户直接使用我们预置的参数加载器：http://github.com/cc-cheunggg/ioc-golang/tree/master/autowire/param_loader。
   
-  我们会先后尝试：标签重定向到配置、标签读入参数、配置文件的默认位置读入参数。每个注册到框架的结构都有唯一的ID，因此也会在配置文件中拥有配置参数的位置，这一默认位置在这里定义：http://github.com/alibaba/ioc-golang/blob/master/autowire/param_loader/default_config.go#L21，我们更希望和用户约定好这一点。
+  我们会先后尝试：标签重定向到配置、标签读入参数、配置文件的默认位置读入参数。每个注册到框架的结构都有唯一的ID，因此也会在配置文件中拥有配置参数的位置，这一默认位置在这里定义：http://github.com/cc-cheunggg/ioc-golang/blob/master/autowire/param_loader/default_config.go#L21，我们更希望和用户约定好这一点。
   
   当所有加载器都加载参数失败后，将会抛出错误。使用者应当查阅自己引入的结构加载器实现，并按照要求配置好参数。
   
@@ -202,7 +202,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
 
   该类型是否为基础类型
 
-  go 基础类型不可直接通过&在构造时取地址，因此我们针对基础类型单独设计了该注解。在 [配置扩展](https://github.com/alibaba/IOC-golang/tree/master/extension/config) 中被使用较多。
+  go 基础类型不可直接通过&在构造时取地址，因此我们针对基础类型单独设计了该注解。在 [配置扩展](https://github.com/cc-cheunggg/ioc-golang/tree/master/extension/config) 中被使用较多。
 
 - ioc:autowire:alias=MyAppAlias （非必填）
 
@@ -210,7 +210,7 @@ iocli can identify the following annotation keys, and the values after '=' are j
 
 - ioc:tx:func=MyTransactionFunction（非必填）
 
-  指定事务函数和回滚函数，参考事务例子 [example/aop/transaction](https://github.com/alibaba/IOC-golang/tree/master/example/aop/transaction)
+  指定事务函数和回滚函数，参考事务例子 [example/aop/transaction](https://github.com/cc-cheunggg/ioc-golang/tree/master/example/aop/transaction)
 
 ## iocli 操作命令
 

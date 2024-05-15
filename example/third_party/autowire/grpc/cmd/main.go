@@ -19,17 +19,17 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	googleGRPC "google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/api"
-	"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service1"
-	"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service2"
-	"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/struct1"
-	"github.com/alibaba/ioc-golang/extension/autowire/grpc"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/api"
+	"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service1"
+	"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service2"
+	"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/struct1"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/grpc"
 )
 
 func init() {
@@ -56,10 +56,10 @@ func init() {
 type App struct {
 	HelloServiceClient api.HelloServiceClient `grpc:"hello-service"`
 
-	ExampleService1Impl1 service1.Service1 `singleton:"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service1.Impl1"`
+	ExampleService1Impl1 service1.Service1 `singleton:"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service1.Impl1"`
 
-	ExampleService2Impl1 service2.Service2 `singleton:"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl1"`
-	ExampleService2Impl2 service2.Service2 `singleton:"github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl2"`
+	ExampleService2Impl1 service2.Service2 `singleton:"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl1"`
+	ExampleService2Impl2 service2.Service2 `singleton:"github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl2"`
 
 	ExampleStruct1 *struct1.Struct1 `singleton:""`
 }

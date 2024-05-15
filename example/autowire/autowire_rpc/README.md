@@ -16,7 +16,7 @@
 
 ```go
 import (
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/dto"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/dto"
 )
 
 // +ioc:autowire=true
@@ -56,7 +56,7 @@ func (s *ServiceStruct) GetUser(name string, age int) (*dto.User, error) {
 
 ```go
 import(
-  "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/service/api"
+  "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/service/api"
 )
 // +ioc:autowire=true
 // +ioc:autowire:type=singleton
@@ -81,14 +81,14 @@ func (a *App) Run() {
 
 **启动服务端**
 
-服务端需要确保引入对应服务提供者结构包： `_ "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"`
+服务端需要确保引入对应服务提供者结构包： `_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"`
 
 ```go
 package main
 
 import (
-	"github.com/alibaba/ioc-golang"
-	_ "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"
+	"github.com/cc-cheunggg/ioc-golang"
+	_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"
 )
 
 func main() {

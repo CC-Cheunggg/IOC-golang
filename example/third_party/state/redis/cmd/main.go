@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	"github.com/go-redis/redis"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 
-	normalRedis "github.com/alibaba/ioc-golang/extension/state/redis"
+	normalRedis "github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 // +ioc:autowire=true
@@ -40,7 +40,7 @@ type App struct {
 	NormalDB2Redis normalRedis.RedisIOCInterface `normal:",db2-redis"`
 	NormalDB3Redis normalRedis.RedisIOCInterface `normal:",address=127.0.0.1:6379&db=3"`
 	NormalDB4Redis normalRedis.RedisIOCInterface `normal:",address=${REDIS_ADDRESS_EXPAND}&db=5"`
-	NormalDB5Redis normalRedis.RedisIOCInterface `normal:",address=${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.nested.address}&db=15"`
+	NormalDB5Redis normalRedis.RedisIOCInterface `normal:",address=${autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.nested.address}&db=15"`
 
 	privateClient *redis.Client
 }

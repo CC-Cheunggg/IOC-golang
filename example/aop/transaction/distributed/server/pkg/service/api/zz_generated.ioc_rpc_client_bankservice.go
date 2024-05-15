@@ -3,9 +3,9 @@
 package api
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_client"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_client"
 )
 
 func init() {

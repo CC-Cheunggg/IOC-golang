@@ -20,14 +20,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"google.golang.org/grpc"
 
-	monitorPB "github.com/alibaba/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
+	monitorPB "github.com/cc-cheunggg/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
 )
 
 type mockMonitorServiceMonitorServerImpl struct {
@@ -53,7 +53,7 @@ func TestMonitorServiceImpl(t *testing.T) {
 		// 1. create mock interceptor impl for 'interceptorImpl'
 		mockInterceptorImpl := newMockInterceptorImplIOCInterface(t)
 
-		sdid := "github.com/alibaba/ioc-golang/extension/aop/monitor/test.Struct1"
+		sdid := "github.com/cc-cheunggg/ioc-golang/extension/aop/monitor/test.Struct1"
 		method := "TestMethod1"
 		timestamp := time.Now().UnixMicro()
 		interval := int64(1)

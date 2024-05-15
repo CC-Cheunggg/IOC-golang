@@ -22,12 +22,12 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
-	logPB "github.com/alibaba/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
+	logPB "github.com/cc-cheunggg/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
 
-	"github.com/alibaba/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop"
 )
 
 const Name = "log"

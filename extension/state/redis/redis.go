@@ -21,7 +21,7 @@ import (
 
 	"github.com/go-redis/redis"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 // +ioc:autowire=true
@@ -1031,26 +1031,26 @@ func (r *Redis) TxPipeline() redis.Pipeliner {
 // subscription may not be active immediately. To force the connection to wait,
 // you may call the Receive() method on the returned *PubSub like so:
 //
-//    sub := client.Subscribe(queryResp)
-//    iface, err := sub.Receive()
-//    if err != nil {
-//        // handle error
-//    }
+//	sub := client.Subscribe(queryResp)
+//	iface, err := sub.Receive()
+//	if err != nil {
+//	    // handle error
+//	}
 //
-//    // Should be *Subscription, but others are possible if other actions have been
-//    // taken on sub since it was created.
-//    switch iface.(type) {
-//    case *Subscription:
-//        // subscribe succeeded
-//    case *Message:
-//        // received first message
-//    case *Pong:
-//        // pong received
-//    default:
-//        // handle error
-//    }
+//	// Should be *Subscription, but others are possible if other actions have been
+//	// taken on sub since it was created.
+//	switch iface.(type) {
+//	case *Subscription:
+//	    // subscribe succeeded
+//	case *Message:
+//	    // received first message
+//	case *Pong:
+//	    // pong received
+//	default:
+//	    // handle error
+//	}
 //
-//    ch := sub.Channel()
+//	ch := sub.Channel()
 func (r *Redis) Subscribe(channels ...string) *redis.PubSub {
 	return r.client.Subscribe(channels...)
 }

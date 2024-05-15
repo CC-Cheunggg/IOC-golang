@@ -18,13 +18,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/extension/registry/nacos"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/extension/registry/nacos"
 )
 
 // +ioc:autowire=true

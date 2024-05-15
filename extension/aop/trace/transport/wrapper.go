@@ -28,7 +28,7 @@ import (
 	tJaegerClient "github.com/uber/jaeger-client-go/thrift-gen/jaeger"
 	"github.com/uber/jaeger-client-go/transport"
 
-	"github.com/alibaba/ioc-golang/extension/aop/trace/common"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/common"
 )
 
 type localWrappedHTTPTransport struct {

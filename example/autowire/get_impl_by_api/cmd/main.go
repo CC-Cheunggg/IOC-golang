@@ -18,9 +18,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/extension/state/redis"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 // +ioc:autowire=true
@@ -31,7 +31,7 @@ type App struct {
 }
 
 func (a *App) Run() {
-	redisClientGetyByNormalAPI, err := normal.GetImpl("github.com/alibaba/ioc-golang/extension/state/redis.Redis", &redis.Param{
+	redisClientGetyByNormalAPI, err := normal.GetImpl("github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis", &redis.Param{
 		Address: "localhost:6379",
 		DB:      "0",
 	})

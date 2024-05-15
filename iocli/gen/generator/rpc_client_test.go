@@ -18,7 +18,7 @@ package generator
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin/common"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin/common"
 )
 
 func Test_matchFunctionByStructName(t *testing.T) {

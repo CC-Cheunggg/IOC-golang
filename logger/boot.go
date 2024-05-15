@@ -1,8 +1,8 @@
 package logger
 
 import (
-	"github.com/alibaba/ioc-golang/logger/common"
-	"github.com/alibaba/ioc-golang/logger/zp"
+	"github.com/cc-cheunggg/ioc-golang/logger/common"
+	"github.com/cc-cheunggg/ioc-golang/logger/zp"
 )
 
 var zapFactory = zp.Factory

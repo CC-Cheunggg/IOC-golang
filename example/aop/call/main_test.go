@@ -20,11 +20,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/test/iocli_command"
+	"github.com/cc-cheunggg/ioc-golang/test/iocli_command"
 )
 
 func TestCallAOP(t *testing.T) {
@@ -36,18 +36,18 @@ func TestCallAOP(t *testing.T) {
 	}()
 	time.Sleep(time.Second * 1)
 
-	output, err := iocli_command.Run([]string{"call", "singleton", "github.com/alibaba/ioc-golang/example/aop/call.UserService",
+	output, err := iocli_command.Run([]string{"call", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/call.UserService",
 		`CreateUser`, `--params`, `["laurence",22]`}, time.Second*1)
 	assert.Nil(t, err)
 	t.Log(output)
-	assert.True(t, strings.Contains(output, `Call singleton: github.com/alibaba/ioc-golang/example/aop/call.UserService.CreateUser() success!
+	assert.True(t, strings.Contains(output, `Call singleton: github.com/cc-cheunggg/ioc-golang/example/aop/call.UserService.CreateUser() success!
 Param = ["laurence",22]
 Return values = [{"Id":1,"Name":"laurence","Age":22,"Mark":""},null]`))
 
-	output, err = iocli_command.Run([]string{"call", "singleton", "github.com/alibaba/ioc-golang/example/aop/call.UserService",
+	output, err = iocli_command.Run([]string{"call", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/call.UserService",
 		"ParseUserInfo", `--params`, `[{"Id":1,"Name":"laurence","Age":24}]`}, time.Second*1)
 	assert.Nil(t, err)
-	assert.True(t, strings.Contains(output, `Call singleton: github.com/alibaba/ioc-golang/example/aop/call.UserService.ParseUserInfo() success!
+	assert.True(t, strings.Contains(output, `Call singleton: github.com/cc-cheunggg/ioc-golang/example/aop/call.UserService.ParseUserInfo() success!
 Param = [{"Id":1,"Name":"laurence","Age":24}]
 Return values = ["laurence",24,"",null]`))
 }

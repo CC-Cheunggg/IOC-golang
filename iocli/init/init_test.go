@@ -22,10 +22,10 @@ func Test_parseGOMod(t *testing.T) {
 			name: "Test find()",
 			args: args{
 				regex: `module\s+(?P<name>[\S]+)`,
-				src:   "module github.com/alibaba/ioc-golang\n\ngo 1.17\n\nrequire (...)\n",
+				src:   "module github.com/cc-cheunggg/ioc-golang\n\ngo 1.17\n\nrequire (...)\n",
 				name:  "$name",
 			},
-			want: "github.com/alibaba/ioc-golang",
+			want: "github.com/cc-cheunggg/ioc-golang",
 		},
 	}
 	for _, tt := range tests {

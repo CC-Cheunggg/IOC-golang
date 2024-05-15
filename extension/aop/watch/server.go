@@ -16,9 +16,9 @@
 package watch
 
 import (
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 // +ioc:autowire=true

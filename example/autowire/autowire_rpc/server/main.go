@@ -16,8 +16,8 @@
 package main
 
 import (
-	"github.com/alibaba/ioc-golang"
-	_ "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"
+	"github.com/cc-cheunggg/ioc-golang"
+	_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/service"
 )
 
 func main() {

@@ -5,7 +5,7 @@ package monitor
 import (
 	mock "github.com/stretchr/testify/mock"
 
-	aop "github.com/alibaba/ioc-golang/aop"
+	aop "github.com/cc-cheunggg/ioc-golang/aop"
 
 	testing "testing"
 )

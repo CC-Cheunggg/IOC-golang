@@ -22,7 +22,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 // +ioc:autowire=true
@@ -101,10 +101,11 @@ func (db *GORMDB) ToSQL(queryFn func(tx *gorm.DB) *gorm.DB) string {
 }
 
 // Model specify the model you would like to run db operations
-//    // update all users's name to `hello`
-//    db.Model(&User{}).Update("name", "hello")
-//    // if user's primary key is non-blank, will use it as condition, then will only update the user's name to `hello`
-//    db.Model(&user).Update("name", "hello")
+//
+//	// update all users's name to `hello`
+//	db.Model(&User{}).Update("name", "hello")
+//	// if user's primary key is non-blank, will use it as condition, then will only update the user's name to `hello`
+//	db.Model(&user).Update("name", "hello")
 func (db *GORMDB) Model(value interface{}) GORMDBIOCInterface {
 	return fromDB(db.db.Model(value))
 }
@@ -150,9 +151,10 @@ func (db *GORMDB) Or(query interface{}, args ...interface{}) GORMDBIOCInterface 
 }
 
 // Joins specify Joins conditions
-//     db.Joins("Account").Find(&user)
-//     db.Joins("JOIN emails ON emails.user_id = users.id AND emails.email = ?", "jinzhu@example.org").Find(&user)
-//     db.Joins("Account", DB.Select("id").Where("user_id = users.id AND name = ?", "someName").Model(&Account{}))
+//
+//	db.Joins("Account").Find(&user)
+//	db.Joins("JOIN emails ON emails.user_id = users.id AND emails.email = ?", "jinzhu@example.org").Find(&user)
+//	db.Joins("Account", DB.Select("id").Where("user_id = users.id AND name = ?", "someName").Model(&Account{}))
 func (db *GORMDB) Joins(query string, args ...interface{}) GORMDBIOCInterface {
 	return fromDB(db.db.Joins(query, args...))
 }
@@ -168,8 +170,9 @@ func (db *GORMDB) Having(query interface{}, args ...interface{}) GORMDBIOCInterf
 }
 
 // Order specify order when retrieve records from database
-//     db.Order("name DESC")
-//     db.Order(clause.OrderByColumn{Column: clause.Column{Name: "name"}, Desc: true})
+//
+//	db.Order("name DESC")
+//	db.Order(clause.OrderByColumn{Column: clause.Column{Name: "name"}, Desc: true})
 func (db *GORMDB) Order(value interface{}) GORMDBIOCInterface {
 	return fromDB(db.db.Order(value))
 }
@@ -185,23 +188,25 @@ func (db *GORMDB) Offset(offset int) GORMDBIOCInterface {
 }
 
 // Scopes pass current database connection to arguments `func(DB) DB`, which could be used to add conditions dynamically
-//     func AmountGreaterThan1000(db *gorm.DB) *gorm.DB {
-//         return db.Where("amount > ?", 1000)
-//     }
 //
-//     func OrderStatus(status []string) func (db *gorm.DB) *gorm.DB {
-//         return func (db *gorm.DB) *gorm.DB {
-//             return db.Scopes(AmountGreaterThan1000).Where("status in (?)", status)
-//         }
-//     }
+//	func AmountGreaterThan1000(db *gorm.DB) *gorm.DB {
+//	    return db.Where("amount > ?", 1000)
+//	}
 //
-//     db.Scopes(AmountGreaterThan1000, OrderStatus([]string{"paid", "shipped"})).Find(&orders)
+//	func OrderStatus(status []string) func (db *gorm.DB) *gorm.DB {
+//	    return func (db *gorm.DB) *gorm.DB {
+//	        return db.Scopes(AmountGreaterThan1000).Where("status in (?)", status)
+//	    }
+//	}
+//
+//	db.Scopes(AmountGreaterThan1000, OrderStatus([]string{"paid", "shipped"})).Find(&orders)
 func (db *GORMDB) Scopes(funcs ...func(db *gorm.DB) *gorm.DB) GORMDBIOCInterface {
 	return fromDB(db.db.Scopes(funcs...))
 }
 
 // Preload preload associations with given conditions
-//    db.Preload("Orders", "state NOT IN (?)", "cancelled").Find(&users)
+//
+//	db.Preload("Orders", "state NOT IN (?)", "cancelled").Find(&users)
 func (db *GORMDB) Preload(query string, args ...interface{}) GORMDBIOCInterface {
 	return fromDB(db.db.Preload(query, args...))
 }
@@ -317,8 +322,9 @@ func (db *GORMDB) Scan(dest interface{}) GORMDBIOCInterface {
 }
 
 // Pluck used to query single column from a model as a map
-//     var ages []int64
-//     db.Model(&users).Pluck("age", &ages)
+//
+//	var ages []int64
+//	db.Model(&users).Pluck("age", &ages)
 func (db *GORMDB) Pluck(column string, dest interface{}) GORMDBIOCInterface {
 	return fromDB(db.db.Pluck(column, dest))
 }

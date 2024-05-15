@@ -63,7 +63,7 @@
 
 ### Helloworld
 
-An example to show demo of [README](https://github.com/alibaba/ioc-golang#ioc-golang-a-golang-dependency-injection-framework)
+An example to show demo of [README](https://github.com/cc-cheunggg/ioc-golang#ioc-golang-a-golang-dependency-injection-framework)
 
 ### Third Party
 

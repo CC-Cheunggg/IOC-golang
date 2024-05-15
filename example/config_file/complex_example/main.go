@@ -19,10 +19,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/config"
-	configField "github.com/alibaba/ioc-golang/extension/config"
-	"github.com/alibaba/ioc-golang/extension/state/redis"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	configField "github.com/cc-cheunggg/ioc-golang/extension/config"
+	"github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 // +ioc:autowire=true

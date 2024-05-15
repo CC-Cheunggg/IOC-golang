@@ -24,9 +24,9 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"os"
 
-	callPB "github.com/alibaba/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
-	"github.com/alibaba/ioc-golang/iocli/root"
-	"github.com/alibaba/ioc-golang/logger"
+	callPB "github.com/cc-cheunggg/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 func isValidJSON(str string) bool {

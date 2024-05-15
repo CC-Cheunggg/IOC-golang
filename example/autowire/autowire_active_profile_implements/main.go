@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_active_profile_implements/service"
-	_ "github.com/alibaba/ioc-golang/example/autowire/autowire_active_profile_implements/service/impl"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_active_profile_implements/service"
+	_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_active_profile_implements/service/impl"
 )
 
 // +ioc:autowire=true

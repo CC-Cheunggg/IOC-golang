@@ -6,10 +6,10 @@
 package impl
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	service "github.com/alibaba/ioc-golang/example/autowire/autowire_allimpls/service"
-	allimpls "github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	service "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_allimpls/service"
+	allimpls "github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 )
 
 func init() {

@@ -18,13 +18,13 @@ package main
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/extension/state/redis"
-	"github.com/alibaba/ioc-golang/test/docker_compose"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/extension/state/redis"
+	"github.com/cc-cheunggg/ioc-golang/test/docker_compose"
 )
 
 func (a *App) TestRun(t *testing.T) {

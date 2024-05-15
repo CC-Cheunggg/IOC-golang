@@ -24,7 +24,7 @@ const transactionFunctionAnnotation = "ioc:tx:func"
 // +ioc:autowire=true
 // +ioc:autowire:type=allimpls
 // +ioc:autowire:proxy=false
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/iocli/gen/marker.DefinitionGetter
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/iocli/gen/marker.DefinitionGetter
 
 type transactionFunctionMarker struct {
 }

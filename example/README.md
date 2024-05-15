@@ -63,7 +63,7 @@
 
 ### Helloworld
 
-展示了[README](https://github.com/alibaba/ioc-golang#ioc-golang-a-golang-dependency-injection-framework) 中给出的例子
+展示了[README](https://github.com/cc-cheunggg/ioc-golang#ioc-golang-a-golang-dependency-injection-framework) 中给出的例子
 
 ### Third Party
 

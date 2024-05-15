@@ -21,23 +21,23 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
 )
 
 func TestListServiceImpl(t *testing.T) {
 	debugMetadata := aop.GetAllInterfaceMetadata()
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct1"] = &common.StructMetadata{
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct1"] = &common.StructMetadata{
 		MethodMetadata: map[string]*common.MethodMetadata{},
 	}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct2"] = &common.StructMetadata{
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct2"] = &common.StructMetadata{
 		MethodMetadata: map[string]*common.MethodMetadata{},
 	}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod1"] = &common.MethodMetadata{}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod2"] = &common.MethodMetadata{}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod3"] = &common.MethodMetadata{}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct2"].MethodMetadata["MockMethod1"] = &common.MethodMetadata{}
-	debugMetadata["github.com/alibaba/ioc-golang/aop/test.Struct2"].MethodMetadata["MockMethod2"] = &common.MethodMetadata{}
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod1"] = &common.MethodMetadata{}
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod2"] = &common.MethodMetadata{}
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct1"].MethodMetadata["MockMethod3"] = &common.MethodMetadata{}
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct2"].MethodMetadata["MockMethod1"] = &common.MethodMetadata{}
+	debugMetadata["github.com/cc-cheunggg/ioc-golang/aop/test.Struct2"].MethodMetadata["MockMethod2"] = &common.MethodMetadata{}
 	mockService, err := GetlistServiceImplSingleton(&listServiceImplParam{
 		AllInterfaceMetadataMap: debugMetadata,
 	})
@@ -47,13 +47,13 @@ func TestListServiceImpl(t *testing.T) {
 	serviceMetadatas := result.GetServiceMetadata()
 	assert.NotNil(t, serviceMetadatas)
 	assert.Equal(t, 2, len(serviceMetadatas))
-	assert.Equal(t, "github.com/alibaba/ioc-golang/aop/test.Struct1", serviceMetadatas[0].ImplementationName)
+	assert.Equal(t, "github.com/cc-cheunggg/ioc-golang/aop/test.Struct1", serviceMetadatas[0].ImplementationName)
 	assert.Equal(t, 3, len(serviceMetadatas[0].Methods))
 	assert.Equal(t, "MockMethod1", serviceMetadatas[0].Methods[0])
 	assert.Equal(t, "MockMethod2", serviceMetadatas[0].Methods[1])
 	assert.Equal(t, "MockMethod3", serviceMetadatas[0].Methods[2])
 
-	assert.Equal(t, "github.com/alibaba/ioc-golang/aop/test.Struct2", serviceMetadatas[1].ImplementationName)
+	assert.Equal(t, "github.com/cc-cheunggg/ioc-golang/aop/test.Struct2", serviceMetadatas[1].ImplementationName)
 	assert.Equal(t, 2, len(serviceMetadatas[1].Methods))
 	assert.Equal(t, "MockMethod1", serviceMetadatas[1].Methods[0])
 	assert.Equal(t, "MockMethod2", serviceMetadatas[1].Methods[1])

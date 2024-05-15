@@ -6,9 +6,9 @@
 package impls
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	allimpls "github.com/alibaba/ioc-golang/extension/autowire/allimpls"
-	marker "github.com/alibaba/ioc-golang/iocli/gen/marker"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	allimpls "github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
+	marker "github.com/cc-cheunggg/ioc-golang/iocli/gen/marker"
 )
 
 func init() {

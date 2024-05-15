@@ -25,9 +25,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	logPB "github.com/alibaba/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
-	"github.com/alibaba/ioc-golang/iocli/root"
-	"github.com/alibaba/ioc-golang/logger"
+	logPB "github.com/cc-cheunggg/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 func getLogServiceClient(addr string) logPB.LogServiceClient {

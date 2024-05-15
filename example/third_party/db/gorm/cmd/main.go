@@ -18,10 +18,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
-	"github.com/alibaba/ioc-golang"
-	normalMysql "github.com/alibaba/ioc-golang/extension/db/gorm"
+	"github.com/cc-cheunggg/ioc-golang"
+	normalMysql "github.com/cc-cheunggg/ioc-golang/extension/db/gorm"
 )
 
 // +ioc:autowire=true

@@ -27,7 +27,7 @@ import (
 type RecursiveApp struct {
 	ThisRecursiveApp
 	// inject main.ServiceImpl1 pointer to Service interface with proxy wrapper
-	ServiceImpl1 Service `normal:"github.com/alibaba/ioc-golang/test/stress/aop.ServiceImpl1"`
+	ServiceImpl1 Service `normal:"github.com/cc-cheunggg/ioc-golang/test/stress/aop.ServiceImpl1"`
 	counter      int
 }
 

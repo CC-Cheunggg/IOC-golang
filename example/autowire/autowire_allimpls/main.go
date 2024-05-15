@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_allimpls/service"
-	_ "github.com/alibaba/ioc-golang/example/autowire/autowire_allimpls/service/impl"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_allimpls/service"
+	_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_allimpls/service/impl"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 )
 
 // +ioc:autowire=true

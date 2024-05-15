@@ -22,9 +22,9 @@ import (
 
 	perrors "github.com/pkg/errors"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 type WrapperAutowire interface {

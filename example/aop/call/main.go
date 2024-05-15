@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/alibaba/ioc-golang/example/aop/call/dto"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/call/dto"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 )
 
 // +ioc:autowire=true

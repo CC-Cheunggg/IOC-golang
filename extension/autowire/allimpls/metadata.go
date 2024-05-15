@@ -16,7 +16,7 @@
 package allimpls
 
 import (
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 const InterfaceMetadataKey = "interfaces"

@@ -18,10 +18,10 @@ package log
 import (
 	"github.com/opentracing/opentracing-go"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 type CurrentSpanGetter func() opentracing.Span

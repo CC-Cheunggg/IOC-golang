@@ -22,12 +22,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
 
-	_ "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/service"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/service/api"
-	"github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_client"
+	_ "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/service"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/service/api"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_client"
 )
 
 func TestMain(m *testing.M) {
@@ -44,7 +44,7 @@ var param = &rpc_client.Param{
 }
 
 func TestRPCClientGetByAPI(t *testing.T) {
-	simpleClient, err := rpc_client.GetImpl("github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.SimpleServiceIOCRPCClient", param)
+	simpleClient, err := rpc_client.GetImpl("github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.SimpleServiceIOCRPCClient", param)
 	assert.Nil(t, err)
 	testSimpleClient(t, simpleClient.(api.SimpleServiceIOCRPCClient))
 

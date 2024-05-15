@@ -50,15 +50,15 @@ func GetRedis(config *Config) (Redis, error) {
 
 ```go
 import(
-	"github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/autowire/singleton"
-	"github.com/alibaba/ioc-golang/extension/state/redis"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	"github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 )
 
 
 func (a *App) Run() {
   // 通过 normal 提供的全局 API，传递结构描述 ID 和配置结构，创建多例对象
-	normalRedis, err := normal.GetImpl("github.com/alibaba/ioc-golang/extension/state/redis.Redis", &redis.Config{
+	normalRedis, err := normal.GetImpl("github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis", &redis.Config{
 		Address: "localhost:6379",
 		DB:      "0",
 	})

@@ -18,11 +18,11 @@ package allimpls
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 type mockImpl struct {

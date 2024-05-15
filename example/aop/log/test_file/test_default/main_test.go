@@ -24,10 +24,10 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/aop/log/app"
-	aopLog "github.com/alibaba/ioc-golang/extension/aop/log"
-	"github.com/alibaba/ioc-golang/test/iocli_command"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/log/app"
+	aopLog "github.com/cc-cheunggg/ioc-golang/extension/aop/log"
+	"github.com/cc-cheunggg/ioc-golang/test/iocli_command"
 )
 
 func TestDefaultLogAOPLevelConfiguration(t *testing.T) {
@@ -50,33 +50,33 @@ func testLogCommand(t *testing.T) {
 	}()
 	time.Sleep(time.Second * 1)
 
-	output, err := iocli_command.Run([]string{"logs", "singleton", "github.com/alibaba/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString"}, time.Second*4)
+	output, err := iocli_command.Run([]string{"logs", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString"}, time.Second*4)
 	assert.Nil(t, err)
 	assertContainsLevel(t, output, []string{"debug", "info", "warning", "error"}, "This is ServiceImpl1, hello laurence")
 	assertContainsLevel(t, output, []string{"debug", "info", "warning", "error"}, "This is ServiceImpl2, hello laurence")
 
-	output, err = iocli_command.Run([]string{"logs", "singleton", "github.com/alibaba/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "error"}, time.Second*4)
+	output, err = iocli_command.Run([]string{"logs", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "error"}, time.Second*4)
 	assert.Nil(t, err)
 	assertContainsLevel(t, output, []string{"error"}, "This is ServiceImpl1, hello laurence")
 	assertContainsLevel(t, output, []string{"error"}, "This is ServiceImpl2, hello laurence")
 	assertNotContainsLevel(t, output, []string{"debug", "info", "warning"}, "This is ServiceImpl1, hello laurence")
 	assertNotContainsLevel(t, output, []string{"debug", "info", "warning"}, "This is ServiceImpl2, hello laurence")
 
-	output, err = iocli_command.Run([]string{"logs", "singleton", "github.com/alibaba/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "info"}, time.Second*4)
+	output, err = iocli_command.Run([]string{"logs", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "info"}, time.Second*4)
 	assert.Nil(t, err)
 	assertContainsLevel(t, output, []string{"error", "warning", "info"}, "This is ServiceImpl1, hello laurence")
 	assertContainsLevel(t, output, []string{"error", "warning", "info"}, "This is ServiceImpl2, hello laurence")
 	assertNotContainsLevel(t, output, []string{"debug"}, "This is ServiceImpl1, hello laurence")
 	assertNotContainsLevel(t, output, []string{"debug"}, "This is ServiceImpl2, hello laurence")
 
-	output, err = iocli_command.Run([]string{"log", "singleton", "github.com/alibaba/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--invocation"}, time.Second*4)
+	output, err = iocli_command.Run([]string{"log", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--invocation"}, time.Second*4)
 	assert.Nil(t, err)
 	assertContainsLevel(t, output, []string{"debug", "info", "warning", "error"}, "This is ServiceImpl1, hello laurence")
 	assertContainsLevel(t, output, []string{"debug", "info", "warning", "error"}, "This is ServiceImpl2, hello laurence")
 	assertContainsInvocationCtx(t, output, `Response 1:`)
 	assertContainsInvocationCtx(t, output, `Param 1:`)
 
-	output, err = iocli_command.Run([]string{"log", "singleton", "github.com/alibaba/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "error", "--invocation"}, time.Second*4)
+	output, err = iocli_command.Run([]string{"log", "singleton", "github.com/cc-cheunggg/ioc-golang/example/aop/log/app.ServiceImpl1", "GetHelloString", "--level", "error", "--invocation"}, time.Second*4)
 	assert.Nil(t, err)
 	assertContainsLevel(t, output, []string{"error"}, "This is ServiceImpl1, hello laurence")
 	assertContainsLevel(t, output, []string{"error"}, "This is ServiceImpl2, hello laurence")

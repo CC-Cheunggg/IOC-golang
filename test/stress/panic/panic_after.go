@@ -18,7 +18,7 @@ package panic
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop"
 )
 
 // +ioc:autowire=true

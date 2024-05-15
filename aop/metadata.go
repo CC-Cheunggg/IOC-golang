@@ -15,7 +15,7 @@
 
 package aop
 
-import "github.com/alibaba/ioc-golang/autowire"
+import "github.com/cc-cheunggg/ioc-golang/autowire"
 
 const MetadataKey = "aop"
 

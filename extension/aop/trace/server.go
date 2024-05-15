@@ -21,9 +21,9 @@ import (
 
 	"github.com/jaegertracing/jaeger/model"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	tracePB "github.com/alibaba/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	tracePB "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 const outBatchBufferAndChSize = 1000

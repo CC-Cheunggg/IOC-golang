@@ -21,8 +21,8 @@ import (
 
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop/common"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 // startDebugServer should be called only when aop is enabled

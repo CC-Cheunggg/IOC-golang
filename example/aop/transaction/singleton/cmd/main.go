@@ -18,8 +18,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/example/aop/transaction/singleton/service"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/example/aop/transaction/singleton/service"
 )
 
 // +ioc:autowire=true

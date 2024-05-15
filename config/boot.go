@@ -21,8 +21,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/alibaba/ioc-golang/logger"
-	"github.com/alibaba/ioc-golang/logger/common"
+	"github.com/cc-cheunggg/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger/common"
 )
 
 type Config AnyMap

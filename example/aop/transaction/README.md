@@ -147,8 +147,8 @@ func (b *TradeService) DoTradeWithTxAddMoneyFailed(id1, id2, num int) error {
 % cd singleton/cmd
 % go run .
 ...
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/aop/transaction/singleton/service.BankService
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/aop/transaction/singleton/service.TradeService
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/aop/transaction/singleton/service.BankService
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/aop/transaction/singleton/service.TradeService
 [Autowire Struct Descriptor] Found type singleton registered SD main.App
 user 1 have  100
 user 2 have  100
@@ -182,7 +182,7 @@ user 2 have  200
 % cd distributed/server
 % go run .
 ....
-[GIN-debug] POST   /github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service/api.BankServiceIOCRPCClient/RemoveMoneyRollback --> github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol/protocol_impl.(*IOCProtocol).Export.func1 (3 handlers)
+[GIN-debug] POST   /github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service/api.BankServiceIOCRPCClient/RemoveMoneyRollback --> github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol/protocol_impl.(*IOCProtocol).Export.func1 (3 handlers)
 [GIN-debug] Listening and serving HTTP on :2022
 ```
 
@@ -212,13 +212,13 @@ user 2 have money 200
 
 ```bash
 % iocli list                                                                                                     
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService
 [RemoveMoneyRollback GetMoney AddMoney AddMoneyRollback RemoveMoney]
 
-github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol/protocol_impl.IOCProtocol
+github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/protocol/protocol_impl.IOCProtocol
 [Invoke Export]
 
-% iocli monitor -i 3 github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService 
+% iocli monitor -i 3 github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService 
 ====================
 2022/07/09 21:18:41
 ====================
@@ -231,15 +231,15 @@ github.com/alibaba/ioc-golang/extension/autowire/rpc/protocol/protocol_impl.IOCP
 ```bash
 ====================
 2022/07/09 21:20:11
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.AddMoney()
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.AddMoney()
 Total: 3, Success: 2, Fail: 1, AvgRT: 0.00ms, FailRate: 33.33%
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.AddMoneyRollback()
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.AddMoneyRollback()
 Total: 1, Success: 1, Fail: 0, AvgRT: 0.00ms, FailRate: 0.00%
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.GetMoney()
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.GetMoney()
 Total: 6, Success: 6, Fail: 0, AvgRT: 0.00ms, FailRate: 0.00%
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.RemoveMoney()
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.RemoveMoney()
 Total: 3, Success: 3, Fail: 0, AvgRT: 0.00ms, FailRate: 0.00%
-github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.RemoveMoneyRollback()
+github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service.BankService.RemoveMoneyRollback()
 Total: 2, Success: 2, Fail: 0, AvgRT: 0.00ms, FailRate: 0.00%
 
 ```

@@ -16,7 +16,7 @@
 package service
 
 import (
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/server/pkg/dto"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/server/pkg/dto"
 )
 
 // +ioc:autowire=true

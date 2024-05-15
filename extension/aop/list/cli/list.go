@@ -24,9 +24,9 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/types/known/emptypb"
 
-	listPB "github.com/alibaba/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
-	"github.com/alibaba/ioc-golang/iocli/root"
-	"github.com/alibaba/ioc-golang/logger"
+	listPB "github.com/cc-cheunggg/ioc-golang/extension/aop/list/api/ioc_golang/aop/list"
+	"github.com/cc-cheunggg/ioc-golang/iocli/root"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 func getListServiceClent(addr string) listPB.ListServiceClient {

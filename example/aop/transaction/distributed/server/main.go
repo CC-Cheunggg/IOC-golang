@@ -16,8 +16,8 @@
 package main
 
 import (
-	"github.com/alibaba/ioc-golang"
-	_ "github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service"
+	"github.com/cc-cheunggg/ioc-golang"
+	_ "github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service"
 )
 
 func main() {

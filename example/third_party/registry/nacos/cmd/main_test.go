@@ -21,14 +21,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
-	"github.com/alibaba/ioc-golang/extension/registry/nacos"
-	"github.com/alibaba/ioc-golang/test/docker_compose"
+	"github.com/cc-cheunggg/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang/extension/registry/nacos"
+	"github.com/cc-cheunggg/ioc-golang/test/docker_compose"
 )
 
 const (

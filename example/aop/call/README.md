@@ -27,9 +27,9 @@ Welcome to use ioc-golang 1.0.2!
 [AOP Log] log config print-params-max-depth is set to default 3
 [AOP Log] log config invocation ctx logs level is using default 'info'
 [AOP Log] log config invocation ctx logs print level is using default 'debug'
-[Wrapper Autowire] Parse param from config file with sdid github.com/alibaba/ioc-golang/extension/aop/log.logInterceptor failed, error: property [autowire singleton github.com/alibaba/ioc-golang/extension/aop/log.logInterceptor param]'s key autowire not found, continue with nil param.
+[Wrapper Autowire] Parse param from config file with sdid github.com/cc-cheunggg/ioc-golang/extension/aop/log.logInterceptor failed, error: property [autowire singleton github.com/cc-cheunggg/ioc-golang/extension/aop/log.logInterceptor param]'s key autowire not found, continue with nil param.
 [AOP] Debug server port is set to default :1999
-[Wrapper Autowire] Parse param from config file with sdid github.com/alibaba/ioc-golang/extension/aop/log.logInterceptor failed, error: property [autowire singleton github.com/alibaba/ioc-golang/extension/aop/log.logInterceptor param]'s key autowire not found, continue with nil param.
+[Wrapper Autowire] Parse param from config file with sdid github.com/cc-cheunggg/ioc-golang/extension/aop/log.logInterceptor failed, error: property [autowire singleton github.com/cc-cheunggg/ioc-golang/extension/aop/log.logInterceptor param]'s key autowire not found, continue with nil param.
 [Boot] Start to load autowire
 [Debug] Debug server listening at :1999
 [Autowire Type] Found registered autowire type normal

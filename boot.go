@@ -18,12 +18,12 @@ package ioc
 import (
 	"golang.org/x/sync/errgroup"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/config"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	_ "github.com/alibaba/ioc-golang/extension/imports/boot"
+	_ "github.com/cc-cheunggg/ioc-golang/extension/imports/boot"
 )
 
 type LoadHook func() error

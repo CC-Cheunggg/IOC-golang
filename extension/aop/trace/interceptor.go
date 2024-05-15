@@ -22,10 +22,10 @@ import (
 	opentracing "github.com/opentracing/opentracing-go"
 	opentracingLog "github.com/opentracing/opentracing-go/log"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/aop/common"
-	traceCommon "github.com/alibaba/ioc-golang/extension/aop/trace/common"
-	"github.com/alibaba/ioc-golang/extension/aop/trace/goroutine_trace"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	traceCommon "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/common"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/goroutine_trace"
 )
 
 // +ioc:autowire=true

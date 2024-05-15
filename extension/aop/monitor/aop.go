@@ -18,8 +18,8 @@ package monitor
 import (
 	"google.golang.org/grpc"
 
-	"github.com/alibaba/ioc-golang/aop"
-	monitorPB "github.com/alibaba/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	monitorPB "github.com/cc-cheunggg/ioc-golang/extension/aop/monitor/api/ioc_golang/aop/monitor"
 )
 
 const Name = "monitor"

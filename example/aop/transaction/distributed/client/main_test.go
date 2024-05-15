@@ -21,9 +21,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang"
+	"github.com/cc-cheunggg/ioc-golang"
 
-	_ "github.com/alibaba/ioc-golang/example/aop/transaction/distributed/server/pkg/service"
+	_ "github.com/cc-cheunggg/ioc-golang/example/aop/transaction/distributed/server/pkg/service"
 )
 
 func (a *App) TestRun(t *testing.T) {

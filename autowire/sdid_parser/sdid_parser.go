@@ -18,11 +18,11 @@ package sdid_parser
 import (
 	"strings"
 
-	"github.com/alibaba/ioc-golang/config"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 type defaultSDIDParser struct {

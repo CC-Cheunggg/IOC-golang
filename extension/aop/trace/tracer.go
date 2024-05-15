@@ -22,7 +22,7 @@ import (
 
 	"github.com/jaegertracing/jaeger/model"
 
-	"github.com/alibaba/ioc-golang/extension/aop/trace/transport"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/transport"
 
 	"github.com/opentracing/opentracing-go"
 	"github.com/uber/jaeger-client-go"

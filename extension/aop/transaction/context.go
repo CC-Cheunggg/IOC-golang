@@ -18,8 +18,8 @@ package transaction
 import (
 	"reflect"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 // +ioc:autowire=true

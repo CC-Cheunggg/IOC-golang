@@ -18,8 +18,8 @@ package autowire
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 const (

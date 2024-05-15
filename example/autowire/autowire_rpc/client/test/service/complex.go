@@ -18,7 +18,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
 )
 
 // +ioc:autowire=true

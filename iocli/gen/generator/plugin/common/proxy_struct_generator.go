@@ -22,7 +22,7 @@ import (
 	"sigs.k8s.io/controller-tools/pkg/loader"
 	"sigs.k8s.io/controller-tools/pkg/markers"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin"
 )
 
 func GenProxyStruct(proxySuffix string, c plugin.CodeWriter, needProxyStructInfos []*markers.TypeInfo, root *loader.Package, debugMode bool) {

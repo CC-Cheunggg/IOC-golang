@@ -30,7 +30,7 @@ func ExpandConfigNestedValue(targetValue interface{}) (interface{}, bool) {
 		if strings.HasPrefix(tv, EnvPrefixKey) && strings.HasSuffix(tv, EnvSuffixKey) && !isEnv(tv) {
 			// try nested parsing
 			var nestedValue interface{}
-			// ${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand.address}
+			// ${autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.expand.address}
 			err := LoadConfigByPrefix(tv[2:len(tv)-1], &nestedValue)
 			if err != nil {
 				return nestedValue, false

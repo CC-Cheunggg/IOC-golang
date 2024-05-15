@@ -19,7 +19,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/common"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/common"
 )
 
 /*

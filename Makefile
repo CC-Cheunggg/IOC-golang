@@ -21,7 +21,7 @@ tidy-all:
 	go mod tidy
 
 imports:
-	goimports -local github.com/alibaba/ioc-golang -w .
+	goimports -local github.com/cc-cheunggg/ioc-golang -w .
 
 lint: tidy-all
 	golangci-lint run

@@ -7,4 +7,4 @@
 // and any other packr generated files.
 package init
 
-import _ "github.com/alibaba/ioc-golang/iocli/init/packrd"
+import _ "github.com/cc-cheunggg/ioc-golang/iocli/init/packrd"

@@ -6,12 +6,12 @@
 package trace
 
 import (
-	"github.com/alibaba/ioc-golang/aop"
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	singleton "github.com/alibaba/ioc-golang/autowire/singleton"
-	util "github.com/alibaba/ioc-golang/autowire/util"
-	aoptrace "github.com/alibaba/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	singleton "github.com/cc-cheunggg/ioc-golang/autowire/singleton"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
+	aoptrace "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/api/ioc_golang/aop/trace"
 	"github.com/gin-gonic/gin"
 	opentracing_go "github.com/opentracing/opentracing-go"
 	"net/http"

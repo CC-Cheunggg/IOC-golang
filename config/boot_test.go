@@ -21,8 +21,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/logger"
-	"github.com/alibaba/ioc-golang/logger/common"
+	"github.com/cc-cheunggg/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger/common"
 )
 
 type redisConfig struct {
@@ -42,23 +42,23 @@ func TestLoadConfigByPrefix(t *testing.T) {
 		nestedRedisConfig := &redisConfig{}
 		redisConfig := &redisConfig{}
 
-		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.param", redisConfig))
+		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.param", redisConfig))
 		assert.Equal(t, "0", redisConfig.DB)
 		assert.Equal(t, "localhost:6379", redisConfig.Address)
 
-		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db1-redis.param", redisConfig))
+		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db1-redis.param", redisConfig))
 		assert.Equal(t, "1", redisConfig.DB)
 		assert.Equal(t, "localhost:16379", redisConfig.Address)
 
-		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.db2-redis.param", redisConfig))
+		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.db2-redis.param", redisConfig))
 		assert.Equal(t, "2", redisConfig.DB)
 		assert.Equal(t, "localhost:26379", redisConfig.Address)
 
-		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand", redisConfig))
+		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.expand", redisConfig))
 		assert.Equal(t, "15", redisConfig.DB)
 		assert.Equal(t, "localhost:6388", redisConfig.Address)
 
-		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.nested", nestedRedisConfig))
+		assert.Nil(t, LoadConfigByPrefix("autowire.normal.<github.com/cc-cheunggg/ioc-golang/extension/state/redis.Redis>.nested", nestedRedisConfig))
 		assert.Equal(t, "15", nestedRedisConfig.DB)
 		assert.Equal(t, "localhost:6388", nestedRedisConfig.Address)
 	})

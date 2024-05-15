@@ -24,11 +24,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/extension/autowire/allimpls"
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/allimpls"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin/common"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin/common"
 
 	"sigs.k8s.io/controller-tools/pkg/genall"
 	"sigs.k8s.io/controller-tools/pkg/loader"
@@ -81,9 +81,9 @@ func genIOCRPCClientStub(ctx *genall.GenerationContext, root *loader.Package, rp
 			return
 		}
 
-		autowireAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire")
-		normalAlias := c.NeedImport("github.com/alibaba/ioc-golang/autowire/normal")
-		rpcClientAlias := c.NeedImport("github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_client")
+		autowireAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire")
+		normalAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/autowire/normal")
+		rpcClientAlias := c.NeedImport("github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_client")
 
 		c.Line(`func init() {`)
 		// generate client stub factory

@@ -21,9 +21,9 @@ import (
 
 	"github.com/petermattis/goid"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/aop/common"
-	watchPB "github.com/alibaba/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	watchPB "github.com/cc-cheunggg/ioc-golang/extension/aop/watch/api/ioc_golang/aop/watch"
 )
 
 const (

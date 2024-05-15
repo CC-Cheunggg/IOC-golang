@@ -21,14 +21,14 @@ import (
 	"math"
 	"os"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
 	"github.com/spf13/cobra"
 
-	dynamicPluginPB "github.com/alibaba/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
+	dynamicPluginPB "github.com/cc-cheunggg/ioc-golang/extension/aop/dynamic_plugin/api/ioc_golang/aop/dynamic_plugin"
 )
 
 func getDynamicPluginServiceClient(addr string) dynamicPluginPB.DynamicPluginServiceClient {

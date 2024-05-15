@@ -10,13 +10,13 @@ ioc-golang 框架提供了便捷的基于文件注入配置的能力，使开发
 
 ### 依赖注入模型
 
-[config 依赖注入模型](https://github.com/alibaba/IOC-golang/tree/master/extension/config)
+[config 依赖注入模型](https://github.com/cc-cheunggg/ioc-golang/tree/master/extension/config)
 
 ### 关键代码：
 
 ```go
 import (
-  github.com/alibaba/ioc-golang/extension/config
+  github.com/cc-cheunggg/ioc-golang/extension/config
 )
 
 // +ioc:autowire=true
@@ -92,12 +92,12 @@ Welcome to use ioc-golang!
 [Autowire Struct Descriptor] Found type singleton registered SD main.App
 [Autowire Type] Found registered autowire type normal
 [Autowire Type] Found registered autowire type config
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigInt64
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigInt
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigMap
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigSlice
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigString
-[Autowire Struct Descriptor] Found type config registered SD github.com/alibaba/ioc-golang/extension/config.ConfigFloat64
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigInt64
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigInt
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigMap
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigSlice
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigString
+[Autowire Struct Descriptor] Found type config registered SD github.com/cc-cheunggg/ioc-golang/extension/config.ConfigFloat64
 2022/06/06 18:01:22 load config path autowire.config#demo-config#float64-value error =  property [autowire config#demo-config#float64-value]'s key config#demo-config#float64-value not found
 stringValue
 123

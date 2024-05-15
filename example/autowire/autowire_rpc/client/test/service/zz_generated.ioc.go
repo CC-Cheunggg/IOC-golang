@@ -6,11 +6,11 @@
 package service
 
 import (
-	autowire "github.com/alibaba/ioc-golang/autowire"
-	normal "github.com/alibaba/ioc-golang/autowire/normal"
-	util "github.com/alibaba/ioc-golang/autowire/util"
-	"github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
-	rpc_service "github.com/alibaba/ioc-golang/extension/autowire/rpc/rpc_service"
+	autowire "github.com/cc-cheunggg/ioc-golang/autowire"
+	normal "github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	util "github.com/cc-cheunggg/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/dto"
+	rpc_service "github.com/cc-cheunggg/ioc-golang/extension/autowire/rpc/rpc_service"
 )
 
 func init() {
@@ -20,7 +20,7 @@ func init() {
 		},
 	})
 	complexServiceStructDescriptor := &autowire.StructDescriptor{
-		Alias: "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.ComplexServiceIOCRPCClient",
+		Alias: "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.ComplexServiceIOCRPCClient",
 		Factory: func() interface{} {
 			return &ComplexService{}
 		},
@@ -36,7 +36,7 @@ func init() {
 		},
 	})
 	simpleServiceStructDescriptor := &autowire.StructDescriptor{
-		Alias: "github.com/alibaba/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.SimpleServiceIOCRPCClient",
+		Alias: "github.com/cc-cheunggg/ioc-golang/example/autowire/autowire_rpc/client/test/service/api.SimpleServiceIOCRPCClient",
 		Factory: func() interface{} {
 			return &SimpleService{}
 		},

@@ -18,7 +18,7 @@ package autowire
 import (
 	"testing"
 
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -36,7 +36,7 @@ type MockSubInterface interface {
 }
 
 type MockImpl struct {
-	SubImpl MockSubInterface `singleton:"github.com/alibaba/ioc-golang/autowire.MockSubImpl"`
+	SubImpl MockSubInterface `singleton:"github.com/cc-cheunggg/ioc-golang/autowire.MockSubImpl"`
 }
 
 var mockSDID = util.GetSDIDByStructPtr(&MockImpl{})

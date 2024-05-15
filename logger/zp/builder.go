@@ -9,7 +9,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/alibaba/ioc-golang/logger/common"
+	"github.com/cc-cheunggg/ioc-golang/logger/common"
 )
 
 var config common.Config

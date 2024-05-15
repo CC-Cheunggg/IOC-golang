@@ -20,13 +20,13 @@
 
 ### 依赖注入模型
 
-[grpc 依赖注入模型](https://github.com/alibaba/IOC-golang/tree/master/extension/grpc)
+[grpc 依赖注入模型](https://github.com/cc-cheunggg/ioc-golang/tree/master/extension/grpc)
 
 ### 关键代码
 
 ```go
 import(
-	"github.com/alibaba/ioc-golang/extension/autowire/grpc"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/grpc"
 	googleGRPC "google.golang.org/grpc"
 )
 func init() {
@@ -93,13 +93,13 @@ Welcome to use ioc-golang!
 [Debug] Debug mod is not enabled
 [Boot] Start to load autowire
 [Autowire Type] Found registered autowire type grpc
-[Autowire Struct Descriptor] Found type grpc registered SD github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/api.HelloServiceClient
+[Autowire Struct Descriptor] Found type grpc registered SD github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/api.HelloServiceClient
 [Autowire Type] Found registered autowire type singleton
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/struct1.Struct1
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/struct1.Struct1
 [Autowire Struct Descriptor] Found type singleton registered SD main.App
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service1.Impl1
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl1
-[Autowire Struct Descriptor] Found type singleton registered SD github.com/alibaba/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl2
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service1.Impl1
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl1
+[Autowire Struct Descriptor] Found type singleton registered SD github.com/cc-cheunggg/ioc-golang/example/third_party/autowire/grpc/cmd/service2.Impl2
 create conn target  localhost:8080
 App call grpc get: Hello laurence
 ExampleService1Impl1 call grpc get :Hello laurence_service1_impl1

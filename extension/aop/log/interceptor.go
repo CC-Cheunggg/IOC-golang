@@ -21,10 +21,10 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/aop/common"
-	logPB "github.com/alibaba/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
-	"github.com/alibaba/ioc-golang/extension/aop/trace/goroutine_trace"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
+	logPB "github.com/cc-cheunggg/ioc-golang/extension/aop/log/api/ioc_golang/aop/log"
+	"github.com/cc-cheunggg/ioc-golang/extension/aop/trace/goroutine_trace"
 )
 
 // logInterceptor has two features

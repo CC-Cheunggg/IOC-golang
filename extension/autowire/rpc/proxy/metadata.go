@@ -24,7 +24,7 @@ import (
 	dubboCommon "dubbo.apache.org/dubbo-go/v3/common"
 	perrors "github.com/pkg/errors"
 
-	"github.com/alibaba/ioc-golang/extension/autowire/common"
+	"github.com/cc-cheunggg/ioc-golang/extension/autowire/common"
 )
 
 // MetadataMap store metadata of service.

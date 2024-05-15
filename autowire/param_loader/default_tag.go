@@ -22,9 +22,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/config"
 
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 )
 
 type defaultTag struct {
@@ -42,11 +42,13 @@ func GetDefaultTagParamLoader() autowire.ParamLoader {
 /*
 Load support load param like:
 ```go
-type Config struct {
-	Address  string
-	Password string
-	DB       string
-}
+
+	type Config struct {
+		Address  string
+		Password string
+		DB       string
+	}
+
 ```
 
 from field:

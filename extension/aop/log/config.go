@@ -18,7 +18,7 @@ package call
 import (
 	"github.com/sirupsen/logrus"
 
-	"github.com/alibaba/ioc-golang/logger"
+	"github.com/cc-cheunggg/ioc-golang/logger"
 )
 
 type LogConfig struct {

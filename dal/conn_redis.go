@@ -1,6 +1,6 @@
 package dal
 
-import "github.com/alibaba/ioc-golang/extension/state/redis"
+import "github.com/cc-cheunggg/ioc-golang/extension/state/redis"
 
 // +ioc:autowire=true
 // +ioc:autowire:type=singleton

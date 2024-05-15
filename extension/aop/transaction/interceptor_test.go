@@ -22,20 +22,20 @@ import (
 
 	"github.com/stretchr/testify/mock"
 
-	"github.com/alibaba/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/autowire/normal"
-	"github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/autowire/normal"
+	"github.com/cc-cheunggg/ioc-golang/autowire/util"
 )
 
 type bizStruct struct {
 }
 
-const transactionMethodFullName = "github.com/alibaba/ioc-golang/extension/aop/transaction.(*bizStruct).TestMethodTransaction()"
+const transactionMethodFullName = "github.com/cc-cheunggg/ioc-golang/extension/aop/transaction.(*bizStruct).TestMethodTransaction()"
 const transactionMethodName = "TestMethodTransaction"
 const mockGRID = int64(1)
 

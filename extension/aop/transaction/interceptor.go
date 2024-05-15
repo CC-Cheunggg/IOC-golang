@@ -18,10 +18,10 @@ package transaction
 import (
 	"sync"
 
-	"github.com/alibaba/ioc-golang/aop"
-	"github.com/alibaba/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/aop"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
 
-	"github.com/alibaba/ioc-golang/aop/common"
+	"github.com/cc-cheunggg/ioc-golang/aop/common"
 )
 
 // +ioc:autowire=true

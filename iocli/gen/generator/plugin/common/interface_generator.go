@@ -21,7 +21,7 @@ import (
 	"sigs.k8s.io/controller-tools/pkg/loader"
 	"sigs.k8s.io/controller-tools/pkg/markers"
 
-	"github.com/alibaba/ioc-golang/iocli/gen/generator/plugin"
+	"github.com/cc-cheunggg/ioc-golang/iocli/gen/generator/plugin"
 )
 
 func GenInterface(interfaceSuffix string, c plugin.CodeWriter, needInterfaceStructInfos []*markers.TypeInfo, root *loader.Package) {

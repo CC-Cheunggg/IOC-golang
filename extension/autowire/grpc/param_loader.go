@@ -22,8 +22,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/alibaba/ioc-golang/autowire"
-	"github.com/alibaba/ioc-golang/config"
+	"github.com/cc-cheunggg/ioc-golang/autowire"
+	"github.com/cc-cheunggg/ioc-golang/config"
 )
 
 type paramLoader struct {
@@ -39,9 +39,11 @@ from:
 
 ```yaml
 autowire:
-  grpc:
-    resource-service:
-      address: 127.0.0.1:8080
+
+	grpc:
+	  resource-service:
+	    address: 127.0.0.1:8080
+
 ```
 
 Make Dial and generate *grpc.ClientConn as param

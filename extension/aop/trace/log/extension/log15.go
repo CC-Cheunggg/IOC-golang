@@ -20,7 +20,7 @@ import (
 
 	"github.com/inconshreveable/log15"
 
-	traceLog "github.com/alibaba/ioc-golang/extension/aop/trace/log"
+	traceLog "github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log"
 )
 
 const log15Name = "log15"
@@ -29,7 +29,7 @@ const log15Name = "log15"
 // +ioc:autowire:type=allimpls
 // +ioc:autowire:constructFunc=newLog15Handler
 // +ioc:autowire:proxy:autoInjection=false
-// +ioc:autowire:implements=github.com/alibaba/ioc-golang/extension/aop/trace/log.TraceExtensionWriter
+// +ioc:autowire:implements=github.com/cc-cheunggg/ioc-golang/extension/aop/trace/log.TraceExtensionWriter
 
 type log15Handler struct {
 	traceLoggerWriter traceLog.Writer
