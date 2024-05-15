@@ -20,6 +20,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
+	"github.com/alibaba/ioc-golang/logger"
+	"github.com/alibaba/ioc-golang/logger/common"
 )
 
 type redisConfig struct {
@@ -87,6 +90,13 @@ func TestLoadConfigByPrefix(t *testing.T) {
 		assert.Equal(t, "sliceStr1", sliceValue[0])
 		assert.Equal(t, "sliceStr2", sliceValue[1])
 		assert.Equal(t, "sliceStr3", sliceValue[2])
+	})
+
+	t.Run("test with logger config", func(t *testing.T) {
+		c := &common.Config{}
+		assert.Nil(t, LoadConfigByPrefix("logger", c))
+		assert.NotNil(t, c)
+		assert.Nil(t, logger.Load(LoggerConfig()))
 	})
 }
 

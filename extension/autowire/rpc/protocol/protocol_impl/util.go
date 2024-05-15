@@ -47,7 +47,7 @@ func ParseArgs(argsType []reflect.Type, data []byte) (finalArgument []interface{
 	}
 	if len(rawArguments) != len(argsType) {
 		errMsg := fmt.Sprintf("IOC Protocol parse args failed, want %d params but %d is given", len(argsType), len(rawArguments))
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 	for idx, reflectType := range argsType {

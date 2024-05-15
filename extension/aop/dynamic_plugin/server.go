@@ -71,7 +71,7 @@ func updateDynamicPlugin(autowireType, sdid string, pluginPath, pluginName strin
 	structDescriptor := autowire.GetStructDescriptor(sdid)
 	if structDescriptor == nil {
 		errMsg := fmt.Sprintf("To update SDID %s struct descriptor not found, update failed", sdid)
-		logger.Red("[AOP] Dynamic plugin " + errMsg)
+		logger.Error("[AOP] Dynamic plugin " + errMsg)
 		return fmt.Errorf(errMsg)
 	}
 

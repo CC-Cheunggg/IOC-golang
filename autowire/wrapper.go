@@ -98,12 +98,12 @@ func (w *WrapperAutowireImpl) ImplWithParam(sdID string, param interface{}, with
 	rawPtr, err = w.Autowire.Construct(sdID, rawPtr, param)
 	if err != nil {
 		errMsg := fmt.Sprintf("Construct struct %s failed with error = %s, param = %s", sdID, err.Error(), param)
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 	if rawPtr == nil {
 		errMsg := fmt.Sprintf("Construct struct %s failed, constructed ptr is nil, param = %s", sdID, param)
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 
@@ -140,7 +140,7 @@ func (w *WrapperAutowireImpl) ImplWithoutParam(sdID string, withProxy, force boo
 	if err != nil {
 		if w.Autowire.IsSingleton() {
 			// FIXME: ignore parse param error, because of singleton with empty param also try to find property from config file
-			logger.Blue("[Wrapper Autowire] Parse param from config file with sdid %s failed, error: %s, continue with nil param.", sdID, err)
+			logger.Info("[Wrapper Autowire] Parse param from config file with sdid %s failed, error: %s, continue with nil param.", sdID, err)
 			return w.ImplWithParam(sdID, param, withProxy, force)
 		} else {
 			return nil, err
@@ -153,7 +153,7 @@ func (w *WrapperAutowireImpl) ImplWithoutParam(sdID string, withProxy, force boo
 func (w *WrapperAutowireImpl) implWithField(fi *FieldInfo) (interface{}, error) {
 	sdID, err := w.ParseSDID(fi)
 	if err != nil {
-		logger.Red("[Wrapper Autowire] Parse sdid from field %+v failed, error is %s", fi, err)
+		logger.Error("[Wrapper Autowire] Parse sdid from field %+v failed, error is %s", fi, err)
 		return nil, err
 	}
 	sd := GetStructDescriptor(sdID)
@@ -161,7 +161,7 @@ func (w *WrapperAutowireImpl) implWithField(fi *FieldInfo) (interface{}, error) 
 	if implWithProxy {
 		if sd == nil {
 			err = fmt.Errorf("[Wrapper Autowire] sdID %s is invalid when injecting %s type %s, please check", sdID, fi.FieldName, fi.FieldType)
-			logger.Red(err.Error())
+			logger.Error(err.Error())
 			return nil, err
 		}
 		implWithProxy = !sd.DisableProxy
@@ -213,7 +213,7 @@ func (w *WrapperAutowireImpl) inject(impledPtr interface{}, sdId string) error {
 				if !(subService.IsValid() && subService.CanSet()) {
 					errMsg := fmt.Sprintf("Failed to autowire struct %s's impl %s service. It's field type %s with tag '%s:\"%s\"', please check if the field name is exported",
 						sd.ID(), util.GetStructName(impledPtr), field.Type.Name(), tagKey, tagValue)
-					logger.Red("[Autowire Wrapper] Inject field failed with error: %s", errMsg)
+					logger.Error("[Autowire Wrapper] Inject field failed with error: %s", errMsg)
 					return perrors.New(errMsg)
 				}
 

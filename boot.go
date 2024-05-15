@@ -16,6 +16,8 @@
 package ioc
 
 import (
+	"golang.org/x/sync/errgroup"
+
 	"github.com/alibaba/ioc-golang/aop"
 	"github.com/alibaba/ioc-golang/autowire"
 	"github.com/alibaba/ioc-golang/config"
@@ -24,25 +26,52 @@ import (
 	_ "github.com/alibaba/ioc-golang/extension/imports/boot"
 )
 
-const Version = "1.0.3"
+type LoadHook func() error
+
+var (
+	AfterLoad  LoadHook
+	BeforeLoad LoadHook
+	group      errgroup.Group
+)
+
+const Version = "1.0.3.0"
 
 func Load(opts ...config.Option) error {
+
+	if BeforeLoad != nil {
+		err := BeforeLoad()
+		if err != nil {
+			logger.Error("[Boot] Start to call before load handler failure")
+		}
+	}
+
 	printLogo()
-	logger.Cyan("Welcome to use ioc-golang %s!", Version)
+	logger.Debug("Welcome to use ioc-golang %s!", Version)
 
 	// 1. load config
-	logger.Blue("[Boot] Start to load ioc-golang config")
+	logger.Info("[Boot] Start to load ioc-golang config")
 	if err := config.Load(opts...); err != nil {
 		return err
 	}
 
+	logger.Info("[Boot] Start to init logger")
+	if err := logger.Load(config.LoggerConfig()); err != nil {
+		logger.Error("[Boot] Start to init logger unsuccessful")
+	}
+
 	// 2. load debug
-	logger.Blue("[Boot] Start to load debug")
+	logger.Info("[Boot] Start to load debug")
 	if err := aop.Load(); err != nil {
 		return err
 	}
 
 	// 3. load autowire
-	logger.Blue("[Boot] Start to load autowire")
-	return autowire.Load()
+	logger.Info("[Boot] Start to load autowire")
+	err := autowire.Load()
+
+	if err == nil && AfterLoad != nil {
+		return AfterLoad()
+	}
+
+	return err
 }

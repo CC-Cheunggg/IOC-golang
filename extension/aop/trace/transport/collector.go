@@ -132,7 +132,7 @@ func (c *collector) runReadLoop(period time.Duration) {
 			}
 			traces, err := c.spanReader.FindTraces(context.Background(), params)
 			if err != nil {
-				logger.Cyan("jaeger local collector read err = ", err)
+				logger.Debug("jaeger local collector read err = ", err)
 				continue
 			}
 			lastTime = time.Now()

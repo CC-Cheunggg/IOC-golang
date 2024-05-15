@@ -18,14 +18,17 @@ package gorm
 import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"time"
 )
 
 type Param struct {
-	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
-	Username string `yaml:"username"`
-	Password string `yaml:"password"`
-	DBName   string `yaml:"dbname"`
+	Host        string `yaml:"host"`
+	Port        string `yaml:"port"`
+	Username    string `yaml:"username"`
+	Password    string `yaml:"password"`
+	DBName      string `yaml:"dbname"`
+	MaxOpenConn int    `yaml:"max-open-conn"`
+	MaxIdleConn int    `yaml:"max-idle-conn"`
 }
 
 func (c *Param) New(mysqlImpl *GORMDB) (*GORMDB, error) {
@@ -33,6 +36,19 @@ func (c *Param) New(mysqlImpl *GORMDB) (*GORMDB, error) {
 	if err != nil {
 		return nil, err
 	}
+	db, err := rawDB.DB()
+	if err != nil {
+		return nil, err
+	}
+
+	if c.MaxOpenConn != 0 {
+		db.SetMaxOpenConns(c.MaxOpenConn)
+	}
+	if c.MaxIdleConn != 0 {
+		db.SetMaxIdleConns(c.MaxIdleConn)
+	}
+	db.SetConnMaxLifetime(time.Hour)
+
 	mysqlImpl.db = rawDB
 	return mysqlImpl, err
 }

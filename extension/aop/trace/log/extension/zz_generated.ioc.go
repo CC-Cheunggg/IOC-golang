@@ -6,12 +6,11 @@
 package extension
 
 import (
-	"github.com/inconshreveable/log15"
-
 	autowire "github.com/alibaba/ioc-golang/autowire"
 	normal "github.com/alibaba/ioc-golang/autowire/normal"
 	"github.com/alibaba/ioc-golang/extension/aop/trace/log"
 	allimpls "github.com/alibaba/ioc-golang/extension/autowire/allimpls"
+	"github.com/inconshreveable/log15"
 )
 
 func init() {

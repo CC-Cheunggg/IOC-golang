@@ -338,15 +338,3 @@ You can go to [E-commercial system demo based on ioc-golang](https://github.com/
 
 IOC-golang developed by Alibaba and licensed under the Apache License (Version 2.0).
 See the NOTICE file for more information.
-
-### Connect with us
-
-Welcome to join dingtalk group 44638289 if you are interested with the project.
-
-<div align="center">
-	<img src="https://github.com/ioc-golang/ioc-golang-website/blob/main/resources/img/dingtalk_group.png?raw=true" width="30%">
-</div>
-
-### Star me please ⭐
-
-If you think this project is interesting, or helpful to you, please give a star!

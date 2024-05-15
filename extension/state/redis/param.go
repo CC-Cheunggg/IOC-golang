@@ -22,9 +22,11 @@ import (
 )
 
 type Param struct {
-	Address  string
-	Password string
-	DB       string
+	Address     string
+	Password    string
+	DB          string
+	PoolSize    int `yaml:"pool-size"`
+	MinIdleConn int `yaml:"min-idle-conn"`
 }
 
 func (c *Param) New(impl *Redis) (*Redis, error) {
@@ -36,9 +38,11 @@ func (c *Param) New(impl *Redis) (*Redis, error) {
 		return impl, err
 	}
 	client := redis.NewClient(&redis.Options{
-		Addr:     c.Address,
-		Password: c.Password,
-		DB:       dbInt,
+		Addr:         c.Address,
+		Password:     c.Password,
+		DB:           dbInt,
+		PoolSize:     c.PoolSize,
+		MinIdleConns: c.MinIdleConn,
 	})
 	_, err = client.Ping().Result()
 	if err != nil {

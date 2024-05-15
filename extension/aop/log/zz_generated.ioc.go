@@ -6,13 +6,12 @@
 package call
 
 import (
-	"github.com/sirupsen/logrus"
-
 	"github.com/alibaba/ioc-golang/aop"
 	autowire "github.com/alibaba/ioc-golang/autowire"
 	normal "github.com/alibaba/ioc-golang/autowire/normal"
 	singleton "github.com/alibaba/ioc-golang/autowire/singleton"
 	util "github.com/alibaba/ioc-golang/autowire/util"
+	"github.com/sirupsen/logrus"
 )
 
 func init() {

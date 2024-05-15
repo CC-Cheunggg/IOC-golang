@@ -16,7 +16,7 @@
 package common
 
 import (
-	"io/ioutil"
+	"os"
 	"strings"
 
 	"github.com/alibaba/ioc-golang/extension/autowire/common"
@@ -28,7 +28,7 @@ ParseExportedMethodInfoFromGoFiles parse all Upper case methods,
 func ParseExportedMethodInfoFromGoFiles(structName string, goFilesPath []string) []Method {
 	exportedMethods := make([]Method, 0)
 	for _, filePath := range goFilesPath {
-		data, err := ioutil.ReadFile(filePath)
+		data, err := os.ReadFile(filePath)
 		if err != nil {
 			continue
 		}
@@ -51,15 +51,18 @@ func ParseExportedMethodInfoFromGoFiles(structName string, goFilesPath []string)
 joinMethodLine join func line splited by '\n' like:
 
 func (s *ComplexService) RPCBasicType(name string,
+
 	ageF64Ptr *float64,
-) (string, error){
-	return "", nil
-}
+
+	) (string, error){
+		return "", nil
+	}
 
 after join, the output is
-func (s *ComplexService) RPCBasicType(name string, ageF64Ptr *float64) (string, error){
-	return "", nil
-}
+
+	func (s *ComplexService) RPCBasicType(name string, ageF64Ptr *float64) (string, error){
+		return "", nil
+	}
 */
 func joinMethodLine(splitedFileLines []string) []string {
 	afterJoinedFileLine := make([]string, 0)

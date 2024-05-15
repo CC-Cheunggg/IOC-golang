@@ -31,8 +31,8 @@ type watchService struct {
 }
 
 func (w *watchService) Watch(req *watch.WatchRequest, svr watch.WatchService_WatchServer) error {
-	logger.Red("[Debug Server] Receive watch request %+v\n", req.String())
-	defer logger.Red("[Debug Server] Watch request %s finished \n", req.String())
+	logger.Error("[Debug Server] Receive watch request %+v\n", req.String())
+	defer logger.Error("[Debug Server] Watch request %s finished \n", req.String())
 	sdid := req.GetSdid()
 	method := req.GetMethod()
 	sendCh := make(chan *watch.WatchResponse)

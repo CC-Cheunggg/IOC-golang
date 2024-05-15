@@ -33,8 +33,8 @@ type monitorService struct {
 }
 
 func (w *monitorService) Monitor(req *monitorPB.MonitorRequest, svr monitorPB.MonitorService_MonitorServer) error {
-	logger.Red("[Debug Server] Receive monitor request %s\n", req.String())
-	defer logger.Red("[Debug Server] Monitor %s finished \n", req.String())
+	logger.Error("[Debug Server] Receive monitor request %s\n", req.String())
+	defer logger.Error("[Debug Server] Monitor %s finished \n", req.String())
 	sdid := req.GetSdid()
 	method := req.GetMethod()
 	sendCh := make(chan *monitorPB.MonitorResponse)

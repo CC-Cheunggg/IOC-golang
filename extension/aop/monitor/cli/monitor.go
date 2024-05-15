@@ -66,7 +66,7 @@ var monitorCommand = &cobra.Command{
 		if len(args) > 1 {
 			method = args[1]
 		}
-		logger.Cyan("iocli monitor started, try to connect to debug server at %s", debugServerAddr)
+		logger.Debug("iocli monitor started, try to connect to debug server at %s", debugServerAddr)
 		client, err := debugServiceClient.Monitor(context.Background(), &monitorPB.MonitorRequest{
 			Sdid:     sdid,
 			Method:   method,
@@ -75,7 +75,7 @@ var monitorCommand = &cobra.Command{
 		if err != nil {
 			panic(err)
 		}
-		logger.Cyan("debug server connected, monitor info would be printed every %ds", interval)
+		logger.Debug("debug server connected, monitor info would be printed every %ds", interval)
 
 		allMonitorResponseItemsMap := make(map[string][]*monitorPB.MonitorResponseItem, 0)
 		allMonitorResponseItemsLock := sync.RWMutex{}
@@ -85,9 +85,9 @@ var monitorCommand = &cobra.Command{
 			signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 			<-signals
 			fmt.Println()
-			logger.Red("Got interrupt signal, collecting data during %dms", time.Now().UnixMilli()-startTime)
-			logger.Red("====================Collection====================")
-			logger.Red("%s", time.Now().Format("2006/01/02 15:04:05"))
+			logger.Error("Got interrupt signal, collecting data during %dms", time.Now().UnixMilli()-startTime)
+			logger.Error("====================Collection====================")
+			logger.Error("%s", time.Now().Format("2006/01/02 15:04:05"))
 			allMonitorResponseItemsLock.RLock()
 
 			allMethods := make(methodSorter, 0)
@@ -99,7 +99,7 @@ var monitorCommand = &cobra.Command{
 			for _, methodKey := range allMethods {
 				// get method all records
 				items := allMonitorResponseItemsMap[methodKey]
-				logger.Blue(methodKey)
+				logger.Info(methodKey)
 
 				// init value
 				total := int64(0)
@@ -124,7 +124,7 @@ var monitorCommand = &cobra.Command{
 				avgFailRate = getAverageFloat32(allFailRates)
 
 				// print information
-				logger.Blue(fmt.Sprintf("Total: %d, Success: %d, Fail: %d, AvgRT: %.2fus, FailRate: %.2f%%",
+				logger.Info(fmt.Sprintf("Total: %d, Success: %d, Fail: %d, AvgRT: %.2fus, FailRate: %.2f%%",
 					total, success, fail, avgRT, avgFailRate*100))
 			}
 
@@ -135,15 +135,15 @@ var monitorCommand = &cobra.Command{
 		for {
 			msg, err := client.Recv()
 			if err != nil {
-				logger.Red(err.Error())
+				logger.Error(err.Error())
 				return
 			}
-			logger.Red("====================")
-			logger.Red("%s", time.Now().Format("2006/01/02 15:04:05"))
+			logger.Error("====================")
+			logger.Error("%s", time.Now().Format("2006/01/02 15:04:05"))
 			for _, item := range msg.MonitorResponseItems {
 				methodKey := fmt.Sprintf("%s.%s()", item.GetSdid(), item.GetMethod())
-				logger.Blue(methodKey)
-				logger.Blue(fmt.Sprintf("Total: %d, Success: %d, Fail: %d, AvgRT: %.2fus, FailRate: %.2f%%",
+				logger.Info(methodKey)
+				logger.Info(fmt.Sprintf("Total: %d, Success: %d, Fail: %d, AvgRT: %.2fus, FailRate: %.2f%%",
 					item.GetTotal(), item.GetSuccess(), item.GetFail(), item.GetAvgRT(), item.GetFailRate()*100))
 
 				allMonitorResponseItemsLock.Lock()

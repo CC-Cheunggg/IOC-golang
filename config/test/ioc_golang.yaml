@@ -29,3 +29,15 @@ autowire:
       nested:
         address: ${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand.address}
         db: ${autowire.normal.<github.com/alibaba/ioc-golang/extension/state/redis.Redis>.expand.db}
+
+logger:
+  engine: zap
+  level: debug
+  prefix: "[ioc-golang]"
+  format: console
+  director: logs
+  encoder: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  max-age: 100
+  show-line: true
+  std: true

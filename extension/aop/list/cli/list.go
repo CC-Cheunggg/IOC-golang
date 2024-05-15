@@ -43,16 +43,16 @@ var list = &cobra.Command{
 		listServiceClient := getListServiceClent(fmt.Sprintf("%s:%d", debugHost, debugPort))
 		rsp, err := listServiceClient.List(context.Background(), &emptypb.Empty{})
 		if err != nil {
-			logger.Red(err.Error())
+			logger.Error(err.Error())
 			return
 		}
 		if rsp.AppName != "" {
-			logger.Blue("appName: %s", rsp.GetAppName())
+			logger.Info("appName: %s", rsp.GetAppName())
 		}
 		for _, v := range rsp.ServiceMetadata {
-			logger.Blue(v.ImplementationName)
-			logger.Blue("%s", v.Methods)
-			logger.Blue("")
+			logger.Info(v.ImplementationName)
+			logger.Info("%s", v.Methods)
+			logger.Info("")
 		}
 	},
 }

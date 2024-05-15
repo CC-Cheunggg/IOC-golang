@@ -348,15 +348,3 @@ Response 1: (string) (len=36) "This is ServiceImpl1, hello laurence"
 
 IOC-golang developed by Alibaba and licensed under the Apache License (Version 2.0).
 See the NOTICE file for more information.
-
-### 联系我们
-
-感兴趣的开发者可以加入钉钉群：44638289
-
-<div align="center">
-	<img src="https://github.com/ioc-golang/ioc-golang-website/blob/main/resources/img/dingtalk_group.png?raw=true" width="30%">
-</div>
-
-### Star me please  ⭐
-
-如果你对这个项目本身或者实现思路感兴趣，可以给我们一颗 ⭐

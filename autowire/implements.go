@@ -36,7 +36,7 @@ func registerImplements(sd *StructDescriptor) {
 	for _, impledInteface := range allImpledIntefaces {
 		interfaceSDID := util.GetSDIDByStructPtr(impledInteface)
 		if err := registerImplementMapping(interfaceSDID, activeProfile, sd.ID()); err != nil {
-			logger.Red("[Autowire Singleton] RegisterImplementMapping failed with error = %s", err.Error())
+			logger.Error("[Autowire Singleton] RegisterImplementMapping failed with error = %s", err.Error())
 		}
 	}
 }
@@ -69,7 +69,7 @@ func GetBestImplementMapping(interfaceSDID string, activitedOrderedProfiles []st
 	interfaceImplsMap, ok := implementsMap[interfaceSDID]
 	if !ok {
 		err := fmt.Errorf("[Autowire Implement] Any of interface %s implements not found", interfaceSDID)
-		logger.Red(err.Error())
+		logger.Error(err.Error())
 		return nil, "", err
 	}
 
@@ -91,10 +91,10 @@ func GetBestImplementMapping(interfaceSDID string, activitedOrderedProfiles []st
 		currentProfile := activitedOrderedProfiles[i]
 		bestMatchesStructImplSDIDsMap, ok = interfaceImplsMap[currentProfile]
 		if !ok || len(bestMatchesStructImplSDIDsMap) == 0 {
-			logger.Blue("[Autowire Implement] Interface %s implements with profile %s not found", interfaceSDID, currentProfile)
+			logger.Info("[Autowire Implement] Interface %s implements with profile %s not found", interfaceSDID, currentProfile)
 			continue
 		}
-		logger.Blue("[Autowire Implement] Interface %s implements SDID %s with profile %s bast matches activited profiles, select it(them)", interfaceSDID, bestMatchesStructImplSDIDsMap, currentProfile)
+		logger.Info("[Autowire Implement] Interface %s implements SDID %s with profile %s bast matches activited profiles, select it(them)", interfaceSDID, bestMatchesStructImplSDIDsMap, currentProfile)
 		bestMatchProfile = currentProfile
 		break
 	}
@@ -105,7 +105,7 @@ func GetBestImplementMapping(interfaceSDID string, activitedOrderedProfiles []st
 		}
 		err := fmt.Errorf("[Autowire Implement] Interface %s has implemented profile %+v, but activited profiles %+v doesn't match any",
 			interfaceSDID, allImplementedProfiles, activitedOrderedProfiles)
-		logger.Red(err.Error())
+		logger.Error(err.Error())
 		return nil, "", err
 	}
 	bestMatchesStructImplSDIDs := make([]string, 0)

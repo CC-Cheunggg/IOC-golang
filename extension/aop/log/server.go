@@ -34,8 +34,8 @@ type logServiceImpl struct {
 }
 
 func (l *logServiceImpl) Log(req *logPB.LogRequest, logServer logPB.LogService_LogServer) error {
-	logger.Red("[Debug Server] Receive log request %+v\n", req.String())
-	defer logger.Red("[Debug Server] Log request %s finished \n", req.String())
+	logger.Error("[Debug Server] Receive log request %+v\n", req.String())
+	defer logger.Error("[Debug Server] Log request %s finished \n", req.String())
 	sdid := req.GetSdid()
 	method := req.GetMethodName()
 	var fieldMatcher *common.FieldMatcher

@@ -60,7 +60,7 @@ var trace = &cobra.Command{
 		}
 		debugServerAddr := fmt.Sprintf("%s:%d", debugHost, debugPort)
 		debugServiceClient := getTraceServiceClient(debugServerAddr)
-		logger.Cyan("iocli trace started, try to connect to debug server at %s", debugServerAddr)
+		logger.Debug("iocli trace started, try to connect to debug server at %s", debugServerAddr)
 		client, err := debugServiceClient.Trace(context.Background(), &tracePB.TraceRequest{
 			Sdid:                   sdid,
 			Method:                 method,
@@ -71,17 +71,17 @@ var trace = &cobra.Command{
 		if err != nil {
 			panic(err)
 		}
-		logger.Cyan("debug server connected, tracing info would be printed every 5s (default)")
+		logger.Debug("debug server connected, tracing info would be printed every 5s (default)")
 
 		jaegerCollectorEndpoint := common.GetJaegerCollectorEndpoint(pushToAddr)
 
 		if pushToAddr != "" {
-			logger.Cyan("try to push span batch data to %s", pushToAddr)
+			logger.Debug("try to push span batch data to %s", pushToAddr)
 		}
 
 		cacheData := bytes.Buffer{}
 		if storeToFile != "" {
-			logger.Cyan("Spans data is collecting, in order to save to %s", storeToFile)
+			logger.Debug("Spans data is collecting, in order to save to %s", storeToFile)
 			go func() {
 				signals := make(chan os.Signal, 1)
 				signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
@@ -93,15 +93,15 @@ var trace = &cobra.Command{
 		for {
 			msg, err := client.Recv()
 			if err != nil {
-				logger.Red(err.Error())
+				logger.Error(err.Error())
 				writeSpans(cacheData)
 				return
 			}
 			for _, t := range msg.Traces {
-				logger.Red("==================== Trace ====================")
+				logger.Error("==================== Trace ====================")
 				for _, span := range t.Spans {
-					logger.Blue("Duration %dus, OperationName: %s, StartTime: %s, ReferenceSpans: %+v", span.GetDuration().Microseconds(), span.GetOperationName(), span.GetStartTime().Format("2006/01/02 15:04:05"), span.GetReferences())
-					logger.Blue("====================")
+					logger.Info("Duration %dus, OperationName: %s, StartTime: %s, ReferenceSpans: %+v", span.GetDuration().Microseconds(), span.GetOperationName(), span.GetStartTime().Format("2006/01/02 15:04:05"), span.GetReferences())
+					logger.Info("====================")
 				}
 			}
 			if data := msg.ThriftSerializedSpans; pushToAddr != "" && data != nil && len(data) > 0 {
@@ -109,7 +109,7 @@ var trace = &cobra.Command{
 				body := bytes.NewBuffer(data)
 				req, err := http.NewRequest("POST", jaegerCollectorEndpoint, body)
 				if err != nil {
-					logger.Red("New http request with url %s failed with error %s, ", jaegerCollectorEndpoint, err)
+					logger.Error("New http request with url %s failed with error %s, ", jaegerCollectorEndpoint, err)
 					continue
 				}
 				req.Header.Set("Content-Type", "application/x-thrift")
@@ -117,11 +117,11 @@ var trace = &cobra.Command{
 					// async post to collector
 					resp, err := http.DefaultClient.Do(req)
 					if err != nil {
-						logger.Red("Http request with url %s failed with error %s, ", jaegerCollectorEndpoint, err)
+						logger.Error("Http request with url %s failed with error %s, ", jaegerCollectorEndpoint, err)
 						return
 					}
 					if resp.StatusCode >= http.StatusBadRequest {
-						logger.Red(fmt.Sprintf("error from collector: %d", resp.StatusCode))
+						logger.Error(fmt.Sprintf("error from collector: %d", resp.StatusCode))
 						return
 					}
 				}()
@@ -133,10 +133,10 @@ var trace = &cobra.Command{
 
 func writeSpans(cacheData bytes.Buffer) {
 	if err := ioutil.WriteFile(storeToFile, cacheData.Bytes(), fs.ModePerm); err != nil {
-		logger.Red("Write cached spans data to %s failed, error is %s", storeToFile, err.Error())
+		logger.Error("Write cached spans data to %s failed, error is %s", storeToFile, err.Error())
 		os.Exit(1)
 	}
-	logger.Cyan("Write spans to %s finished", storeToFile)
+	logger.Debug("Write spans to %s finished", storeToFile)
 }
 
 var (

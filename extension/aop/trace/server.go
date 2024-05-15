@@ -38,8 +38,8 @@ type traceServiceImpl struct {
 }
 
 func (d *traceServiceImpl) Trace(req *tracePB.TraceRequest, traceServer tracePB.TraceService_TraceServer) error {
-	logger.Red("[Debug Server] Receive trace request %+v\n", req.String())
-	defer logger.Red("[Debug Server] Trace request %s finished \n", req.String())
+	logger.Error("[Debug Server] Receive trace request %+v\n", req.String())
+	defer logger.Error("[Debug Server] Trace request %s finished \n", req.String())
 	sdid := req.GetSdid()
 	method := req.GetMethod()
 	var fieldMatcher *common.FieldMatcher

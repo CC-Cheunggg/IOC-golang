@@ -63,7 +63,7 @@ func (a *Autowire) Factory(fieldInterfaceID string) (interface{}, error) {
 func (a *Autowire) Construct(fieldInterfaceID string, sliceValue, _ interface{}) (interface{}, error) {
 	implSDs, ok := intefaceSDIDImplsSDMap[fieldInterfaceID]
 	if !ok {
-		logger.Red("[Autowire allimpls] interface ID %s's implementations not found", fieldInterfaceID)
+		logger.Error("[Autowire allimpls] interface ID %s's implementations not found", fieldInterfaceID)
 		return nil, fmt.Errorf("[Autowire allimpls] interface ID %s implementations not found", fieldInterfaceID)
 	}
 	for _, implSD := range implSDs {
@@ -97,7 +97,7 @@ func RegisterStructDescriptor(s *autowire.StructDescriptor) {
 
 	// check and register sd to item impl autowire type
 	if err := checkAndRegisterSDToAutowireType(s); err != nil {
-		logger.Red(err.Error())
+		logger.Error(err.Error())
 		return
 	}
 

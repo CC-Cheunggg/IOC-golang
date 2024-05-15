@@ -18,8 +18,8 @@ package cli
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"math"
+	"os"
 
 	"github.com/alibaba/ioc-golang/logger"
 
@@ -55,7 +55,7 @@ var updateCommand = &cobra.Command{
 		dynamicPluginServerAddr := fmt.Sprintf("%s:%d", debugHost, debugPort)
 		dynamicPluginServiceClient := getDynamicPluginServiceClient(dynamicPluginServerAddr)
 		if len(args) < 4 {
-			logger.Red("iocli goplugin update command needs 4 arguments: \n${autowireType} ${sdid} ${pluginPath} ${pluginName} \nlike: \niocli goplugin update singleton main.ServiceImpl1 ./service1.so Service1Plugin\nThe service1.go should be built by: 'go build -buildmode=plugin -o service1.so .'")
+			logger.Error("iocli goplugin update command needs 4 arguments: \n${autowireType} ${sdid} ${pluginPath} ${pluginName} \nlike: \niocli goplugin update singleton main.ServiceImpl1 ./service1.so Service1Plugin\nThe service1.go should be built by: 'go build -buildmode=plugin -o service1.so .'")
 			return
 		}
 		autowireType := args[0]
@@ -63,13 +63,13 @@ var updateCommand = &cobra.Command{
 		pluginFilePath := args[2]
 		pluginName := args[3]
 
-		pluginFile, err := ioutil.ReadFile(pluginFilePath)
+		pluginFile, err := os.ReadFile(pluginFilePath)
 		if err != nil {
-			logger.Red("Read plugin file %s failed with error = %s", pluginFilePath, err)
+			logger.Error("Read plugin file %s failed with error = %s", pluginFilePath, err)
 			return
 		}
 
-		logger.Cyan("Read plugin file %s success!\niocli goplugin update started, try to connect to debug server at %s\n"+
+		logger.Debug("Read plugin file %s success!\niocli goplugin update started, try to connect to debug server at %s\n"+
 			"try to update goplugin with autowire type = %s, sdid = %s, pluginName = %s", pluginFilePath, dynamicPluginServerAddr, autowireType, sdid, pluginName)
 		rsp, err := dynamicPluginServiceClient.Update(context.Background(), &dynamicPluginPB.DynamicPluginUpdateRequest{
 			Sdid:         sdid,
@@ -78,16 +78,16 @@ var updateCommand = &cobra.Command{
 			AutowireType: autowireType,
 		})
 		if err != nil {
-			logger.Red("Update plugin failed with error = %s", err)
+			logger.Error("Update plugin failed with error = %s", err)
 			return
 		}
 
 		if !rsp.Success {
-			logger.Red("Update plugin failed with error = %s", rsp.GetSuccess())
+			logger.Error("Update plugin failed with error = %s", rsp.GetSuccess())
 			return
 		}
 
-		logger.Cyan("Update plugin success!")
+		logger.Debug("Update plugin success!")
 	},
 }
 

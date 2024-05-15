@@ -38,11 +38,11 @@ type TraceExtensionWriter interface {
 func RunRegisteredTraceLoggerWriterFunc(getter CurrentSpanGetter) {
 	allTraceExtensionWriterImpls, err := allimpls.GetImpl(util.GetSDIDByStructPtr(new(TraceExtensionWriter)))
 	if err != nil {
-		logger.Red("[AOP Trace] Get all trace logger writer failed with error = %s", err)
+		logger.Error("[AOP Trace] Get all trace logger writer failed with error = %s", err)
 		return
 	}
 	for _, impl := range allTraceExtensionWriterImpls.([]TraceExtensionWriter) {
 		impl.SetTraceLoggerWriter(newTraceLoggerWriter(getter, impl.Name()))
-		logger.Blue("[AOP] [Trace] Set trace logger to %s success", impl.Name())
+		logger.Info("[AOP] [Trace] Set trace logger to %s success", impl.Name())
 	}
 }

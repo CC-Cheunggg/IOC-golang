@@ -19,11 +19,10 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
-
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"os"
 
 	callPB "github.com/alibaba/ioc-golang/extension/aop/call/api/ioc_golang/aop/call"
 	"github.com/alibaba/ioc-golang/iocli/root"
@@ -47,7 +46,7 @@ var call = &cobra.Command{
 	Use: "call",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 3 {
-			logger.Red("iocli call command needs 3 arguments: \n${autowireType} ${sdid} ${methodName} \n")
+			logger.Error("iocli call command needs 3 arguments: \n${autowireType} ${sdid} ${methodName} \n")
 			return
 		}
 		autowireType := args[0]
@@ -56,16 +55,16 @@ var call = &cobra.Command{
 
 		paramsJSON := params
 		if paramsJSON == "" && paramsFile != "" {
-			data, err := ioutil.ReadFile(paramsFile)
+			data, err := os.ReadFile(paramsFile)
 			if err != nil {
-				logger.Red("iocli call command read param json from %s failed with error = %s", paramsFile, err.Error())
+				logger.Error("iocli call command read param json from %s failed with error = %s", paramsFile, err.Error())
 				return
 			}
 			paramsJSON = string(data)
 		}
 
 		if len(paramsJSON) > 0 && !isValidJSON(paramsJSON) {
-			logger.Red("iocli call command param %s invalid: \n", paramsJSON)
+			logger.Error("iocli call command param %s invalid: \n", paramsJSON)
 			return
 		}
 
@@ -78,11 +77,11 @@ var call = &cobra.Command{
 			Params:       []byte(paramsJSON),
 		})
 		if err != nil {
-			logger.Red(err.Error())
+			logger.Error(err.Error())
 			return
 		}
 
-		logger.Blue("Call %s: %s.%s() success!\nParam = %s\nReturn values = %s", autowireType, sdid, methodName, paramsJSON, string(rsp.ReturnValues))
+		logger.Info("Call %s: %s.%s() success!\nParam = %s\nReturn values = %s", autowireType, sdid, methodName, paramsJSON, string(rsp.ReturnValues))
 	},
 }
 

@@ -40,11 +40,11 @@ type callServiceImpl struct {
 }
 
 func (l *callServiceImpl) Call(_ context.Context, request *call.CallRequest) (*call.CallResponse, error) {
-	logger.Red("[Debug Server] Receive call request %+v\n", request.String())
+	logger.Error("[Debug Server] Receive call request %+v\n", request.String())
 	impl, err := autowire.ImplWithProxy(request.GetAutowireType(), request.GetSdid(), nil)
 	if err != nil {
 		errMsg := fmt.Sprintf("[AOP call] Get impl with autowire type %s, sdid = %s failed with error = %s", request.GetAutowireType(), request.GetSdid(), err)
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 
@@ -56,7 +56,7 @@ func (l *callServiceImpl) Call(_ context.Context, request *call.CallRequest) (*c
 	if !ok {
 		errMsg := fmt.Sprintf("[AOP call] Call function with autowire type %s, sdid = %s, method= %s failed, method not found",
 			request.GetAutowireType(), request.GetSdid(), request.GetMethodName())
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 
@@ -67,7 +67,7 @@ func (l *callServiceImpl) Call(_ context.Context, request *call.CallRequest) (*c
 		if err != nil {
 			errMsg := fmt.Sprintf("[AOP call] Call function with autowire type %s, sdid = %s, method= %s failed, parse arguments failed with error = %s",
 				request.GetAutowireType(), request.GetSdid(), request.GetMethodName(), err.Error())
-			logger.Red(errMsg)
+			logger.Error(errMsg)
 			return nil, fmt.Errorf(errMsg)
 		}
 	}
@@ -81,7 +81,7 @@ func (l *callServiceImpl) Call(_ context.Context, request *call.CallRequest) (*c
 	if err != nil {
 		errMsg := fmt.Sprintf("[AOP call] Call function with autowire type %s, sdid = %s, method= %s response marshal failed with error = %s",
 			request.GetAutowireType(), request.GetSdid(), request.GetMethodName(), err.Error())
-		logger.Red(errMsg)
+		logger.Error(errMsg)
 		return nil, fmt.Errorf(errMsg)
 	}
 

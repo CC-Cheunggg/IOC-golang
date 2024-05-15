@@ -16,13 +16,13 @@
 package config
 
 import (
-	"io/ioutil"
 	"os"
 	"strings"
 
-	"github.com/alibaba/ioc-golang/logger"
-
 	"gopkg.in/yaml.v3"
+
+	"github.com/alibaba/ioc-golang/logger"
+	"github.com/alibaba/ioc-golang/logger/common"
 )
 
 type Config AnyMap
@@ -45,6 +45,7 @@ const (
 
 var (
 	config               Config
+	loggerConfig         common.Config
 	activeProfile        = make([]string, 0)
 	supportedConfigTypes = []string{YmlExtension, YamlExtension}
 	DefaultSearchPath    = []string{".", "./config", "./configs"}
@@ -80,7 +81,7 @@ type Options struct {
 }
 
 func (opts *Options) printLogs() {
-	logger.Blue("[Config] Config files load options is %+v", *opts)
+	logger.Info("[Config] Config files load options is %+v", *opts)
 }
 
 func (opts *Options) loadFromEnv() {
@@ -114,7 +115,7 @@ func SetConfig(yamlBytes []byte) error {
 func Load(opts ...Option) error {
 	options := initOptions(opts...)
 	if notSupportConfigType(options.ConfigType) {
-		logger.Red("[Config] Config file type:[%s] not supported now(yml, yaml)", options.ConfigType)
+		logger.Error("[Config] Config file type:[%s] not supported now(yml, yaml)", options.ConfigType)
 		return nil
 	}
 
@@ -128,17 +129,17 @@ func Load(opts ...Option) error {
 	configFiles := searchConfigFiles(options)
 
 	for _, cf := range configFiles {
-		logger.Blue("[Config] Loading config file %s", cf)
-		contents, err := ioutil.ReadFile(cf)
+		logger.Info("[Config] Loading config file %s", cf)
+		contents, err := os.ReadFile(cf)
 		if err != nil {
-			logger.Red("[Config] Load ioc-golang config file failed. %v\n The load procedure is continue", err)
+			logger.Error("[Config] Load ioc-golang config file failed. %v\n The load procedure is continue", err)
 			return nil
 		}
 
 		var sub Config
 		err = yaml.Unmarshal(contents, &sub)
 		if err != nil {
-			logger.Red("[Config] yamlFile Unmarshal err: %v", err)
+			logger.Error("[Config] yamlFile Unmarshal err: %v", err)
 			return err
 		}
 
@@ -153,7 +154,39 @@ func Load(opts ...Option) error {
 
 	parseConfigIfNecessary(config)
 
+	err, _ := parseLoggerConfig()
+	if err != nil {
+		logger.Error("[Config] parse logger config err: %v", err)
+		// ignore parse failures
+	}
+
 	return nil
+}
+
+func parseLoggerConfig() (error, *common.Config) {
+
+	c := &common.Config{}
+	err := LoadConfigByPrefix("logger", c)
+	if err != nil {
+		return err, nil
+	}
+
+	return nil, c
+}
+
+func LoggerConfig() common.Config {
+	return common.Config{
+		Engine:        loggerConfig.Engine,
+		Level:         loggerConfig.Level,
+		Prefix:        loggerConfig.Prefix,
+		Format:        loggerConfig.Format,
+		Director:      loggerConfig.Director,
+		Encoder:       loggerConfig.Encoder,
+		StacktraceKey: loggerConfig.StacktraceKey,
+		MaxAge:        loggerConfig.MaxAge,
+		ShowLine:      loggerConfig.ShowLine,
+		Std:           loggerConfig.Std,
+	}
 }
 
 func addProperties(config Config, properties AnyMap) {

@@ -23,9 +23,9 @@ import (
 
 func printAutowireRegisteredStructDescriptor() {
 	for autowireType, aw := range GetAllWrapperAutowires() {
-		logger.Blue("[Autowire Type] Found registered autowire type %s", autowireType)
+		logger.Info("[Autowire Type] Found registered autowire type %s", autowireType)
 		for sdID := range aw.GetAllStructDescriptors() {
-			logger.Blue("[Autowire Struct Descriptor] Found type %s registered SD %s", autowireType, sdID)
+			logger.Info("[Autowire Struct Descriptor] Found type %s registered SD %s", autowireType, sdID)
 		}
 	}
 }
@@ -78,6 +78,6 @@ func impl(autowireType, key string, param interface{}, expectWithProxy, force bo
 			return wrapperAutowire.ImplWithParam(targetSDID, param, expectWithProxy, force)
 		}
 	}
-	logger.Red("[Autowire] SDID %s with autowire type %s not found in all autowires", key, autowireType)
+	logger.Error("[Autowire] SDID %s with autowire type %s not found in all autowires", key, autowireType)
 	return nil, fmt.Errorf("[Autowire] SDID %s with autowire type %s not found in all autowires", key, autowireType)
 }

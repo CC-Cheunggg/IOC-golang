@@ -46,9 +46,9 @@ func startDebugServer(aopConfig *common.Config) error {
 
 	// start server
 	go func() {
-		logger.Blue("[Debug] Debug server listening at :%d", lst.Addr().(*net.TCPAddr).Port)
+		logger.Info("[Debug] Debug server listening at :%d", lst.Addr().(*net.TCPAddr).Port)
 		if err := grpcServer.Serve(lst); err != nil {
-			logger.Red("[Debug] Debug server run with error = ", err)
+			logger.Error("[Debug] Debug server run with error = ", err)
 			return
 		}
 	}()

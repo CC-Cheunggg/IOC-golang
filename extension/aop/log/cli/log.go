@@ -43,7 +43,7 @@ var call = &cobra.Command{
 	Aliases: []string{"logs"},
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 3 {
-			logger.Red("iocli log command needs 3 arguments: \n${autowireType} ${sdid} ${methodName} \n")
+			logger.Error("iocli log command needs 3 arguments: \n${autowireType} ${sdid} ${methodName} \n")
 			return
 		}
 		autowireType := args[0]
@@ -51,12 +51,12 @@ var call = &cobra.Command{
 		methodName := args[2]
 		logrusLevel, err := logrus.ParseLevel(level)
 		if err != nil {
-			logger.Red("level %s is invalid", level)
+			logger.Error("level %s is invalid", level)
 			return
 		}
 
 		if printInvocationCtx {
-			logger.Cyan("print invocation ctx")
+			logger.Debug("print invocation ctx")
 		}
 
 		callServiceClient := getLogServiceClient(fmt.Sprintf("%s:%d", debugHost, debugPort))
@@ -68,17 +68,17 @@ var call = &cobra.Command{
 			Invocation:   printInvocationCtx,
 		})
 		if err != nil {
-			logger.Red(err.Error())
+			logger.Error(err.Error())
 			return
 		}
 
 		for {
 			rsp, err := logSvcClient.Recv()
 			if err != nil {
-				logger.Red(err.Error())
+				logger.Error(err.Error())
 				return
 			}
-			logger.Blue(rsp.Content)
+			logger.Info(rsp.Content)
 		}
 	},
 }

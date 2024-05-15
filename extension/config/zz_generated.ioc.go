@@ -158,15 +158,6 @@ func init() {
 	autowireconfig.RegisterStructDescriptor(configStringStructDescriptor)
 }
 
-type configSliceInterface interface {
-	new(impl *ConfigSlice) (*ConfigSlice, error)
-}
-type configStringInterface interface {
-	new(impl *ConfigString) (*ConfigString, error)
-}
-type configFloat64Interface interface {
-	new(impl *ConfigFloat64) (*ConfigFloat64, error)
-}
 type configInt64Interface interface {
 	new(impl *ConfigInt64) (*ConfigInt64, error)
 }
@@ -175,6 +166,15 @@ type configIntInterface interface {
 }
 type configMapInterface interface {
 	new(impl *ConfigMap) (*ConfigMap, error)
+}
+type configSliceInterface interface {
+	new(impl *ConfigSlice) (*ConfigSlice, error)
+}
+type configStringInterface interface {
+	new(impl *ConfigString) (*ConfigString, error)
+}
+type configFloat64Interface interface {
+	new(impl *ConfigFloat64) (*ConfigFloat64, error)
 }
 type configFloat64_ struct {
 	Value_ func() float64

@@ -42,40 +42,40 @@ func (l *LogConfig) fillDefaultConfig() {
 
 	// fill logs level
 	if l.Level == "" {
-		logger.Blue("[AOP Log] log config level is using default '%s'", defaultLevel)
+		logger.Info("[AOP Log] log config level is using default '%s'", defaultLevel)
 		l.Level = defaultLevel
 	}
 	_, err := logrus.ParseLevel(l.Level)
 	if err != nil {
-		logger.Red("[AOP Log] parse log config level %s failed with error = %s, using default '%s'", l.Level, err, defaultLevel)
+		logger.Error("[AOP Log] parse log config level %s failed with error = %s, using default '%s'", l.Level, err, defaultLevel)
 		l.Level = defaultLevel
 	}
 
 	// fill InvocationAOPLogConfig
 	if l.InvocationAOPLogConfig.PrintParamsMaxDepth <= 0 {
-		logger.Blue("[AOP Log] log config print-params-max-depth is set to default 3")
+		logger.Info("[AOP Log] log config print-params-max-depth is set to default 3")
 		l.InvocationAOPLogConfig.PrintParamsMaxDepth = 3
 	}
 
 	// fill invocation aop ctx logs level
 	if l.InvocationAOPLogConfig.Level == "" {
-		logger.Blue("[AOP Log] log config invocation ctx logs level is using default '%s'", defaultLevel)
+		logger.Info("[AOP Log] log config invocation ctx logs level is using default '%s'", defaultLevel)
 		l.InvocationAOPLogConfig.Level = defaultLevel
 	}
 	_, err = logrus.ParseLevel(l.InvocationAOPLogConfig.Level)
 	if err != nil {
-		logger.Red("[AOP Log] parse log config invocation ctx logs level %s failed with error = %s, using default '%s'", l.InvocationAOPLogConfig.Level, err, defaultLevel)
+		logger.Error("[AOP Log] parse log config invocation ctx logs level %s failed with error = %s, using default '%s'", l.InvocationAOPLogConfig.Level, err, defaultLevel)
 		l.InvocationAOPLogConfig.Level = defaultLevel
 	}
 
 	// fill invocation aop ctx logs print level
 	if l.InvocationAOPLogConfig.PrintLevel == "" {
-		logger.Blue("[AOP Log] log config invocation ctx logs print level is using default '%s'", defaultInvocationCtxPrintLevel)
+		logger.Info("[AOP Log] log config invocation ctx logs print level is using default '%s'", defaultInvocationCtxPrintLevel)
 		l.InvocationAOPLogConfig.PrintLevel = defaultInvocationCtxPrintLevel
 	}
 	_, err = logrus.ParseLevel(l.InvocationAOPLogConfig.PrintLevel)
 	if err != nil {
-		logger.Red("[AOP Log] parse log config invocation ctx logs print level %s failed with error = %s, using default '%s'", l.InvocationAOPLogConfig.PrintLevel, err, defaultInvocationCtxPrintLevel)
+		logger.Error("[AOP Log] parse log config invocation ctx logs print level %s failed with error = %s, using default '%s'", l.InvocationAOPLogConfig.PrintLevel, err, defaultInvocationCtxPrintLevel)
 		l.InvocationAOPLogConfig.PrintLevel = defaultInvocationCtxPrintLevel
 	}
 

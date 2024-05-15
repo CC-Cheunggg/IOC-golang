@@ -53,12 +53,12 @@ var watch = &cobra.Command{
 	Use: "watch",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 2 {
-			logger.Red("invalid arguments, usage: iocli watch ${StructID} ${method}")
+			logger.Error("invalid arguments, usage: iocli watch ${StructID} ${method}")
 			return
 		}
 		debugServerAddr := fmt.Sprintf("%s:%d", debugHost, debugPort)
 		debugServiceClient := getWatchServiceClent(debugServerAddr)
-		logger.Cyan("iocli watch started, try to connect to debug server at %s", debugServerAddr)
+		logger.Debug("iocli watch started, try to connect to debug server at %s", debugServerAddr)
 		client, err := debugServiceClient.Watch(context.Background(), &watchPB.WatchRequest{
 			Sdid:      args[0],
 			MaxDepth:  int64(maxDepth),
@@ -68,18 +68,18 @@ var watch = &cobra.Command{
 		if err != nil {
 			panic(err)
 		}
-		logger.Cyan("debug server connected, watch info would be printed when invocation occurs")
+		logger.Debug("debug server connected, watch info would be printed when invocation occurs")
 		invocationCtxLogsGenerator, _ := aopLog.GetInvocationCtxLogsGeneratorSingleton()
 		for {
 			msg, err := client.Recv()
 			if err != nil {
-				logger.Red(err.Error())
+				logger.Error(err.Error())
 				return
 			}
-			logger.Red(invocationCtxLogsGenerator.GetFunctionSignatureLogs(msg.Sdid, msg.MethodName, true))
-			logger.Blue(invocationCtxLogsGenerator.GetParamsLogs(msg.GetParams(), true) + "\n")
-			logger.Red(invocationCtxLogsGenerator.GetFunctionSignatureLogs(msg.Sdid, msg.MethodName, false))
-			logger.Blue(invocationCtxLogsGenerator.GetParamsLogs(msg.GetReturnValues(), false) + "\n")
+			logger.Error(invocationCtxLogsGenerator.GetFunctionSignatureLogs(msg.Sdid, msg.MethodName, true))
+			logger.Info(invocationCtxLogsGenerator.GetParamsLogs(msg.GetParams(), true) + "\n")
+			logger.Error(invocationCtxLogsGenerator.GetFunctionSignatureLogs(msg.Sdid, msg.MethodName, false))
+			logger.Info(invocationCtxLogsGenerator.GetParamsLogs(msg.GetReturnValues(), false) + "\n")
 		}
 	},
 }

@@ -53,7 +53,7 @@ func (p *defaultSDIDParser) Parse(fi *autowire.FieldInfo) (string, error) {
 			// load injectStructName from implements annotation mapping
 			injectStructName = bestMatchSDIDs[0]
 			if len(bestMatchSDIDs) > 1 {
-				logger.Red("[Autowire Default SDIDParser] Field %s has multi impls [%+v] under profile %s, select first one.", fi.FieldType, bestMatchSDIDs, matchProfile)
+				logger.Error("[Autowire Default SDIDParser] Field %s has multi impls [%+v] under profile %s, select first one.", fi.FieldType, bestMatchSDIDs, matchProfile)
 			}
 		}
 	}

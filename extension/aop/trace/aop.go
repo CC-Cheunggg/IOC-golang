@@ -44,7 +44,7 @@ func init() {
 		RPCInterceptorFactory: func() aop.RPCInterceptor {
 			traceRPCInterceptor, err := GetrpcInterceptorIOCInterfaceSingleton()
 			if err != nil {
-				logger.Red("trace AOP GetrpcInterceptorIOCInterfaceSingleton failed with error = %s", err.Error())
+				logger.Error("trace AOP GetrpcInterceptorIOCInterfaceSingleton failed with error = %s", err.Error())
 			}
 			return traceRPCInterceptor
 		},

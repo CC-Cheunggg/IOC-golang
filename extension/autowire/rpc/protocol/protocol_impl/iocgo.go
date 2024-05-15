@@ -80,7 +80,7 @@ func (i *IOCProtocol) Invoke(invocation dubboProtocol.Invocation) dubboProtocol.
 
 	rsp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		logger.Red("[IOC Protocol] Invoke %s with error = %s", invokeURL, err)
+		logger.Error("[IOC Protocol] Invoke %s with error = %s", invokeURL, err)
 		return &dubboProtocol.RPCResult{
 			Err: err,
 		}

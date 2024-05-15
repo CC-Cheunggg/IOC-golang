@@ -17,30 +17,62 @@ package logger
 
 import (
 	"github.com/fatih/color"
+	"github.com/sirupsen/logrus"
+	"go.uber.org/zap"
 )
 
-var disableLogs = false
+var (
+	disableLogs  = false
+	logrusLogger *logrus.Logger
+	zapLogger    *zap.SugaredLogger
+)
 
-func Blue(format string, a ...interface{}) {
+func Info(format string, a ...interface{}) {
 	if disableLogs {
 		return
 	}
+	if logrusLogger != nil {
+		logrusLogger.Infof(format, a...)
+	}
+	if zapLogger != nil {
+		zapLogger.Infof(format, a...)
+	}
 	color.Blue(format, a...)
 }
-func Cyan(format string, a ...interface{}) {
+func Debug(format string, a ...interface{}) {
 	if disableLogs {
 		return
+	}
+	if logrusLogger != nil {
+		logrusLogger.Debugf(format, a...)
+	}
+	if zapLogger != nil {
+		zapLogger.Debugf(format, a...)
 	}
 	color.Cyan(format, a...)
 }
 
-func Red(format string, a ...interface{}) {
+func Error(format string, a ...interface{}) {
 	if disableLogs {
 		return
+	}
+	if logrusLogger != nil {
+		logrusLogger.Errorf(format, a...)
+	}
+	if zapLogger != nil {
+		zapLogger.Errorf(format, a...)
 	}
 	color.Red(format, a...)
 }
 
 func Disable() {
 	disableLogs = true
+}
+
+func SetLogrus(logger *logrus.Logger) {
+	logrusLogger = logger
+}
+
+func SetZap(logger *zap.Logger) {
+	zapLogger = logger.Sugar()
 }
