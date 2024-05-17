@@ -121,8 +121,14 @@ var genCMD = &cobra.Command{
 	iocli gen 
 `,
 	RunE: func(c *cobra.Command, rawOpts []string) error {
+
+		// 默认在当前路径下查找
 		if len(rawOpts) == 0 {
-			rawOpts = []string{"register", "paths=./..."}
+			directory, err := GetWorkingDirectory()
+			if err != nil {
+				return err
+			}
+			rawOpts = []string{"di", "paths=" + directory}
 		}
 
 		if len(rawOpts) == 1 {
