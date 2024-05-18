@@ -14,7 +14,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/inconshreveable/log15 v0.0.0-20201112154412-8562bdadbbac
 	github.com/jaegertracing/jaeger v1.36.0
-	github.com/lestrrat/go-file-rotatelogs v0.0.0-20180223000712-d3151e2a480f
+	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
 	github.com/nacos-group/nacos-sdk-go/v2 v2.0.2
 	github.com/opentracing/opentracing-go v1.2.0
 	github.com/petermattis/goid v0.0.0-20220712135657-ac599d9cba15
@@ -122,7 +122,7 @@ require (
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/knadh/koanf v1.4.2 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
-	github.com/lestrrat/go-strftime v0.0.0-20180220042222-ba3bf9c1d042 // indirect
+	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/markbates/errx v1.1.0 // indirect

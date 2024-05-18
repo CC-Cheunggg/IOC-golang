@@ -1,7 +1,7 @@
 package zp
 
 import (
-	rotatelogs "github.com/lestrrat/go-file-rotatelogs"
+	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -66,12 +66,8 @@ func (f ZapFactory) customTimeEncoder(t time.Time, encoder zapcore.PrimitiveArra
 
 func (f ZapFactory) writeSyncer(level string) (zapcore.WriteSyncer, error) {
 
-	dateStr := time.Now().Format("2006-01-02")
-	if ok, _ := pathExists(dateStr); !ok { // 判断是否有日期文件夹
-		_ = os.Mkdir(path.Join(f.cg().Director, dateStr), os.ModePerm)
-	}
 	fileWriter, err := rotatelogs.New(
-		path.Join(f.cg().Director, dateStr, level+".log"),
+		path.Join(f.cg().Director, "%Y-%m-%d", level+".log"),
 		rotatelogs.WithClock(rotatelogs.Local),
 		rotatelogs.WithMaxAge(time.Duration(f.cg().MaxAge)*24*time.Hour), // 日志留存时间
 		rotatelogs.WithRotationTime(time.Hour*24),
