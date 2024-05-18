@@ -49,7 +49,6 @@ func Debug(format string, a ...interface{}) {
 	if zapLogger != nil {
 		zapLogger.Debugf(format, a...)
 	}
-	color.Cyan("%v", zapLogger)
 	color.Cyan(format, a...)
 }
 

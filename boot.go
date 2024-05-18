@@ -59,8 +59,6 @@ func Load(opts ...config.Option) error {
 		logger.Error("[Boot] Start to init logger unsuccessful")
 	}
 
-	logger.Debug("test logger.")
-
 	// 2. load debug
 	logger.Info("[Boot] Start to load debug")
 	if err := aop.Load(); err != nil {

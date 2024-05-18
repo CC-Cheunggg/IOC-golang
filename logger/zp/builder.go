@@ -61,14 +61,14 @@ func (f ZapFactory) transportLevel() zapcore.Level {
 }
 
 func (f ZapFactory) customTimeEncoder(t time.Time, encoder zapcore.PrimitiveArrayEncoder) {
-	encoder.AppendString(f.cg().Prefix + t.Format("2006/01/02 - 15:04:05.000"))
+	encoder.AppendString(f.cg().Prefix + t.Format("2006-01-02 - 15:04:05.000"))
 }
 
 func (f ZapFactory) writeSyncer(level string) (zapcore.WriteSyncer, error) {
 
-	dateStr := "%Y-%m-%d"
-	if ok, _ := pathExists(f.cg().Director); !ok { // 判断是否有Director文件夹
-		_ = os.Mkdir(dateStr, os.ModePerm)
+	dateStr := time.Now().Format("2006-01-02")
+	if ok, _ := pathExists(dateStr); !ok { // 判断是否有日期文件夹
+		_ = os.Mkdir(path.Join(f.cg().Director, dateStr), os.ModePerm)
 	}
 	fileWriter, err := rotatelogs.New(
 		path.Join(f.cg().Director, dateStr, level+".log"),
