@@ -41,6 +41,10 @@ func fromDB(db *gorm.DB) GORMDBIOCInterface {
 	}).(GORMDBIOCInterface)
 }
 
+func (db *GORMDB) RawGORM() *gorm.DB {
+	return db.db
+}
+
 // Session create new db session
 func (db *GORMDB) Session(config *gorm.Session) GORMDBIOCInterface {
 	return fromDB(db.db.Session(config))

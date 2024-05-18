@@ -128,7 +128,7 @@ var genCMD = &cobra.Command{
 			if err != nil {
 				return err
 			}
-			rawOpts = []string{"di", "paths=" + directory}
+			rawOpts = []string{"paths=" + directory}
 		}
 
 		if len(rawOpts) == 1 {

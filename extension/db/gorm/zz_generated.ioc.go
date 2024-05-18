@@ -48,6 +48,7 @@ type paramInterface interface {
 	New(impl *GORMDB) (*GORMDB, error)
 }
 type gORMDB_ struct {
+	RawGORM_         func() *gorm_iogormx.DB
 	Session_         func(config *gorm_iogormx.Session) GORMDBIOCInterface
 	WithContext_     func(ctx contextx.Context) GORMDBIOCInterface
 	Debug_           func() GORMDBIOCInterface
@@ -114,6 +115,10 @@ type gORMDB_ struct {
 	Migrator_        func() gorm_iogormx.Migrator
 	AutoMigrate_     func(dst ...interface{}) error
 	Association_     func(column string) *gorm_iogormx.Association
+}
+
+func (g *gORMDB_) RawGORM() *gorm_iogormx.DB {
+	return g.RawGORM_()
 }
 
 func (g *gORMDB_) Session(config *gorm_iogormx.Session) GORMDBIOCInterface {
@@ -381,6 +386,7 @@ func (g *gORMDB_) Association(column string) *gorm_iogormx.Association {
 }
 
 type GORMDBIOCInterface interface {
+	RawGORM() *gorm_iogormx.DB
 	Session(config *gorm_iogormx.Session) GORMDBIOCInterface
 	WithContext(ctx contextx.Context) GORMDBIOCInterface
 	Debug() GORMDBIOCInterface

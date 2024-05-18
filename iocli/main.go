@@ -21,7 +21,6 @@ import (
 	_ "github.com/cc-cheunggg/ioc-golang/extension/imports/cli"
 	_ "github.com/cc-cheunggg/ioc-golang/iocli/gen"
 	_ "github.com/cc-cheunggg/ioc-golang/iocli/init"
-
 	"github.com/cc-cheunggg/ioc-golang/iocli/root"
 )
 
