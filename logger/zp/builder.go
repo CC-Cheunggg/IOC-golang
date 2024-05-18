@@ -14,7 +14,9 @@ import (
 
 var config common.Config
 
-var Factory ZapFactory
+var Factory ZapFactory = func(c common.Config) {
+	config = c
+}
 
 type ZapFactory func(config common.Config)
 
@@ -64,8 +66,12 @@ func (f ZapFactory) customTimeEncoder(t time.Time, encoder zapcore.PrimitiveArra
 
 func (f ZapFactory) writeSyncer(level string) (zapcore.WriteSyncer, error) {
 
+	dateStr := "%Y-%m-%d"
+	if ok, _ := pathExists(f.cg().Director); !ok { // 判断是否有Director文件夹
+		_ = os.Mkdir(dateStr, os.ModePerm)
+	}
 	fileWriter, err := rotatelogs.New(
-		path.Join(f.cg().Director, "%Y-%m-%d", level+".log"),
+		path.Join(f.cg().Director, dateStr, level+".log"),
 		rotatelogs.WithClock(rotatelogs.Local),
 		rotatelogs.WithMaxAge(time.Duration(f.cg().MaxAge)*24*time.Hour), // 日志留存时间
 		rotatelogs.WithRotationTime(time.Hour*24),

@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/cc-cheunggg/ioc-golang/config"
 	"github.com/cc-cheunggg/ioc-golang/example/aop/call/dto"
 
 	"github.com/cc-cheunggg/ioc-golang"
@@ -91,7 +92,7 @@ func (s *UserService) ParseUserInfo(usr *dto.User) (string, int, string, error) 
 
 func main() {
 	// start
-	if err := ioc.Load(); err != nil {
+	if err := ioc.Load(config.WithProfilesActive("dev")); err != nil {
 		panic(err)
 	}
 

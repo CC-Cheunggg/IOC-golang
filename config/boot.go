@@ -154,7 +154,7 @@ func Load(opts ...Option) error {
 
 	parseConfigIfNecessary(config)
 
-	err, _ := parseLoggerConfig()
+	err := parseLoggerConfig()
 	if err != nil {
 		logger.Error("[Config] parse logger config err: %v", err)
 		// ignore parse failures
@@ -163,15 +163,16 @@ func Load(opts ...Option) error {
 	return nil
 }
 
-func parseLoggerConfig() (error, *common.Config) {
+func parseLoggerConfig() error {
 
 	c := &common.Config{}
 	err := LoadConfigByPrefix("logger", c)
 	if err != nil {
-		return err, nil
+		return err
 	}
+	loggerConfig = *c
 
-	return nil, c
+	return nil
 }
 
 func LoggerConfig() common.Config {
