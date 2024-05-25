@@ -116,11 +116,11 @@ func init() {
 	singleton.RegisterStructDescriptor(traceServiceImplStructDescriptor)
 }
 
-type traceGoRoutineInterceptorFacadeCtxParamInterface interface {
-	newTraceGoRoutineInterceptorFacadeCtx(impl *traceGoRoutineInterceptorFacadeCtx) (*traceGoRoutineInterceptorFacadeCtx, error)
-}
 type debugServerTraceByMethodContextParamInterface interface {
 	initDebugServerTraceByMethodContext(impl *debugServerTraceByMethodContext) (*debugServerTraceByMethodContext, error)
+}
+type traceGoRoutineInterceptorFacadeCtxParamInterface interface {
+	newTraceGoRoutineInterceptorFacadeCtx(impl *traceGoRoutineInterceptorFacadeCtx) (*traceGoRoutineInterceptorFacadeCtx, error)
 }
 type rpcInterceptorConstructFunc func(impl *rpcInterceptor) (*rpcInterceptor, error)
 type traceInterceptor_ struct {
