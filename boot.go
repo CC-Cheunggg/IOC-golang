@@ -38,6 +38,17 @@ const Version = "1.0.3.0"
 
 func Load(opts ...config.Option) error {
 
+	defer func() {
+		if err := recover(); err != nil {
+			switch err.(type) {
+			case error:
+				logger.Error("biz error %v", err.(error).Error())
+			default:
+				logger.Error("biz error %v", err)
+			}
+		}
+	}()
+
 	if BeforeLoad != nil {
 		err := BeforeLoad()
 		if err != nil {
