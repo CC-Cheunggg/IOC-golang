@@ -17,6 +17,7 @@ package ioc
 
 import (
 	"golang.org/x/sync/errgroup"
+	"runtime/debug"
 
 	"github.com/cc-cheunggg/ioc-golang/aop"
 	"github.com/cc-cheunggg/ioc-golang/autowire"
@@ -42,9 +43,9 @@ func Load(opts ...config.Option) error {
 		if err := recover(); err != nil {
 			switch err.(type) {
 			case error:
-				logger.Error("biz error %v", err.(error).Error())
+				logger.Error("biz error %v ,%v", err, string(debug.Stack()))
 			default:
-				logger.Error("biz error %v", err)
+				logger.Error("biz error %v ,%v", err, string(debug.Stack()))
 			}
 		}
 	}()
