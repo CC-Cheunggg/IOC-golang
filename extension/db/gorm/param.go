@@ -22,13 +22,14 @@ import (
 )
 
 type Param struct {
-	Host        string `yaml:"host"`
-	Port        string `yaml:"port"`
-	Username    string `yaml:"username"`
-	Password    string `yaml:"password"`
-	DBName      string `yaml:"dbname"`
-	MaxOpenConn int    `yaml:"max-open-conn"`
-	MaxIdleConn int    `yaml:"max-idle-conn"`
+	Host            string        `yaml:"host"`
+	Port            string        `yaml:"port"`
+	Username        string        `yaml:"username"`
+	Password        string        `yaml:"password"`
+	DBName          string        `yaml:"dbname"`
+	MaxOpenConn     int           `yaml:"max-open-conn"`
+	MaxIdleConn     int           `yaml:"max-idle-conn"`
+	ConnMaxLifetime time.Duration `yaml:"conn-max-lifetime"`
 }
 
 func (c *Param) New(mysqlImpl *GORMDB) (*GORMDB, error) {
@@ -44,10 +45,14 @@ func (c *Param) New(mysqlImpl *GORMDB) (*GORMDB, error) {
 	if c.MaxOpenConn != 0 {
 		db.SetMaxOpenConns(c.MaxOpenConn)
 	}
+
 	if c.MaxIdleConn != 0 {
 		db.SetMaxIdleConns(c.MaxIdleConn)
 	}
-	db.SetConnMaxLifetime(time.Hour)
+
+	if c.ConnMaxLifetime != 0 {
+		db.SetConnMaxLifetime(c.ConnMaxLifetime)
+	}
 
 	mysqlImpl.db = rawDB
 	return mysqlImpl, err
